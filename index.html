@@ -81,5 +81,38 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">04 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree</p></div></div><span class="mono">Academic background</span></div></div></section>
 <section class="contact" id="contact"><div class="wrap contactgrid"><span class="kicker">05 — Contact</span><div><h2>Good work<br>starts with <em>a hello.</em></h2><p>Open to opportunities in IT support, ISP operations, network engineering, and technology service teams. Let’s connect.</p><div class="actions"><a class="btn primary" href="mailto:farhanahmedturjoy@gmail.com">Email Farhan ↗</a><a class="btn" href="https://github.com/farhanahmedturjoy" target="_blank" rel="noreferrer">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/farhanahmedcse/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/tr.turjoy.2025/" target="_blank" rel="noreferrer">Facebook ↗</a></div><a class="email" href="mailto:farhanahmedturjoy@gmail.com">farhanahmedturjoy@gmail.com</a></div></div></section>
 </main><footer class="footer"><div class="wrap footrow"><span class="small">© <span id="year"></span> Farhan Ahmed</span><span class="small">IT · NETWORK OPERATIONS · BANGLADESH</span></div></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();const revealItems=document.querySelectorAll(".reveal");if("IntersectionObserver" in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");ob.unobserve(e.target)}}),{threshold:.06,rootMargin:"0px 0px 0px 0px"});revealItems.forEach(e=>ob.observe(e));}else{revealItems.forEach(e=>e.classList.add("show"));}</script>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener("click",event=>{
+    const id=link.getAttribute("href");
+    if(!id||id==="#")return;
+    const target=document.querySelector(id);
+    if(!target)return;
+    event.preventDefault();
+    history.pushState(null,"",id);
+    target.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});
+  });
+});
+const revealItems=document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window){
+  const ob=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add("show");ob.unobserve(e.target)}
+  }),{threshold:.06,rootMargin:"0px 0px 0px 0px"});
+  revealItems.forEach(e=>ob.observe(e));
+}else{revealItems.forEach(e=>e.classList.add("show"));}
+</script>
 </body></html>
+<style>
+/* Consistent smooth section navigation on desktop and mobile */
+html{scroll-behavior:smooth!important;scroll-padding-top:82px}
+section[id]{scroll-margin-top:82px}
+@media(max-width:780px){
+  html{scroll-padding-top:68px}
+  section[id]{scroll-margin-top:68px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+}
+</style>
