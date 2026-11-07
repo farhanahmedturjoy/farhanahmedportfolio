@@ -98,6 +98,71 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
   .tickerline{animation:none!important;transform:none!important}
 }
 
+
+/* Refined ISP topology: clearer hierarchy, spacing and responsive flow */
+.topology{padding-top:34px;padding-bottom:92px}
+.topology .sectionhead{align-items:end}
+.topology-panel{
+  position:relative;overflow:hidden;
+  padding:clamp(20px,3.2vw,38px);
+  border:1px solid #46534f;border-radius:18px;
+  background:linear-gradient(145deg,#202b29 0%,#17201f 58%,#202a2d 100%);
+  box-shadow:0 18px 48px rgba(0,0,0,.18)
+}
+.topology-panel:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;
+  background-image:radial-gradient(#9eb5a8 1px,transparent 1px);
+  background-size:22px 22px
+}
+.topology-label{position:relative;color:#c5d2ca!important;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:26px}
+.topology-flow{position:relative;display:flex;align-items:stretch;justify-content:space-between;gap:10px}
+.topology-flow .node{
+  position:relative;display:flex;flex:1 1 0;min-width:0;min-height:116px;
+  flex-direction:column;justify-content:center;
+  padding:17px 13px;border:1px solid #53635d;border-radius:12px;
+  background:linear-gradient(160deg,#303d39,#25312e);
+  box-shadow:0 7px 18px rgba(0,0,0,.16);
+  transition:transform .22s ease,border-color .22s ease,background .22s ease
+}
+.topology-flow .node:hover{transform:translateY(-4px);border-color:#e3a18a;background:linear-gradient(160deg,#394943,#293934)}
+.topology-flow .node b{
+  display:grid;place-items:center;width:27px;height:27px;margin:0 0 15px;
+  border:1px solid #d98a70;border-radius:8px;
+  color:#f0a58c;font:10px "DM Mono",monospace
+}
+.topology-flow .node strong{font-size:clamp(12px,1.2vw,15px);line-height:1.2;letter-spacing:-.02em;color:#fffdf7}
+.topology-flow .node small{font-size:10px;line-height:1.45;color:#c2ccc5;margin-top:7px}
+.topology-flow>i{display:grid;place-items:center;flex:0 0 18px;color:#e99a7e;font-size:17px;font-weight:700}
+.workflow{
+  position:relative;display:flex;align-items:center;gap:24px;
+  margin-top:30px;padding-top:22px;border-top:1px solid #52605a
+}
+.workflow>span{color:#c4d0c8!important;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.workflow p{gap:9px}
+.workflow p b{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:30px;padding:5px 10px;border:1px solid #52645b;border-radius:7px;
+  color:#f4f3eb;background:#293631;font:10px "DM Mono",monospace;letter-spacing:.04em
+}
+.workflow em{color:#e99a7e;font-size:13px}
+@media(max-width:780px){
+  .topology{padding-top:18px;padding-bottom:66px}
+  .topology-panel{padding:20px 16px;border-radius:14px}
+  .topology-label{margin-bottom:18px}
+  .topology-flow{display:flex;flex-direction:column;gap:7px}
+  .topology-flow .node{width:100%;min-height:0;min-height:76px;flex:none;padding:12px 14px 12px 56px}
+  .topology-flow .node b{position:absolute;left:14px;top:50%;transform:translateY(-50%);margin:0}
+  .topology-flow .node strong{font-size:14px}
+  .topology-flow .node small{margin-top:3px;font-size:10px}
+  .topology-flow>i{display:grid;flex:none;height:18px;transform:rotate(90deg);font-size:15px}
+  .workflow{align-items:flex-start;flex-direction:column;gap:12px;margin-top:22px;padding-top:18px}
+  .workflow p{gap:6px}
+  .workflow p b{min-height:28px;padding:4px 8px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .topology-flow .node{transition:none}
+}
+
 </style></head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><div class="links"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
