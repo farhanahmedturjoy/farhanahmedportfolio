@@ -58,6 +58,26 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
   .tickerline{animation:none!important}
   .reveal{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* Back-to-top control and final interaction polish */
+.back-to-top{
+  position:fixed;right:24px;bottom:24px;z-index:20;
+  width:48px;height:48px;display:grid;place-items:center;
+  border:1px solid #78817d;border-radius:50%;
+  background:#f5f3ed;color:#19352b;
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(10px);
+  transition:opacity .22s ease,transform .22s ease,visibility .22s ease,background-color .22s ease;
+  cursor:pointer;
+}
+.back-to-top.visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#ff896b;color:#17191b;border-color:#ff896b;transform:translateY(-3px)}
+.back-to-top:focus-visible{outline:3px solid #ff896b;outline-offset:4px}
+.back-to-top svg{width:19px;height:19px}
+@media(max-width:780px){.back-to-top{right:16px;bottom:16px;width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+
 </style></head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><div class="links"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -80,7 +100,11 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 <section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">04 — Network flow</span><h2>From upstream<br><em>to end user.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow"><div class="node"><b>01</b><strong>Internet</strong><small>Upstream</small></div><i>→</i><div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik</small></div><i>→</i><div class="node"><b>03</b><strong>OLT</strong><small>EPON / GPON</small></div><i>→</i><div class="node"><b>04</b><strong>Splitter</strong><small>Optical distribution</small></div><i>→</i><div class="node"><b>05</b><strong>ONU</strong><small>Customer endpoint</small></div><i>→</i><div class="node"><b>06</b><strong>LAN / Wi-Fi</strong><small>End user</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div></div></div></section>
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">05 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg?v=2" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree</p></div></div><span class="mono">Academic background</span></div></div></section>
 <section class="contact" id="contact"><div class="wrap contactgrid"><span class="kicker">06 — Contact</span><div><h2>Good work<br>starts with <em>a hello.</em></h2><p>Interested in IT Support, NOC, Network Support, and ISP Operations roles. Let’s connect.</p><div class="actions"><a class="btn primary" href="mailto:farhanahmedturjoy@gmail.com">Email Farhan ↗</a><a class="btn" href="https://github.com/farhanahmedturjoy" target="_blank" rel="noreferrer">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/farhanahmedcse/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/tr.turjoy.2025/" target="_blank" rel="noreferrer">Facebook ↗</a></div><a class="email" href="mailto:farhanahmedturjoy@gmail.com">farhanahmedturjoy@gmail.com</a></div></div></section>
-</main><footer class="footer"><div class="wrap footrow"><span class="small">© <span id="year"></span> Farhan Ahmed</span><span class="small">IT · NETWORK OPERATIONS · BANGLADESH</span></div></footer>
+</main>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<footer class="footer"><div class="wrap footrow"><span class="small">© <span id="year"></span> Farhan Ahmed</span><span class="small">IT · NETWORK OPERATIONS · BANGLADESH</span></div></footer>
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -102,6 +126,25 @@ if("IntersectionObserver" in window){
   }),{threshold:.06,rootMargin:"0px 0px 0px 0px"});
   revealItems.forEach(e=>ob.observe(e));
 }else{revealItems.forEach(e=>e.classList.add("show"));}
+
+const backToTop=document.getElementById("backToTop");
+let scrollTicking=false;
+function updateBackToTop(){
+  if(!scrollTicking){
+    scrollTicking=true;
+    requestAnimationFrame(()=>{
+      backToTop.classList.toggle("visible",window.scrollY>420);
+      scrollTicking=false;
+    });
+  }
+}
+window.addEventListener("scroll",updateBackToTop,{passive:true});
+updateBackToTop();
+backToTop.addEventListener("click",()=>{
+  window.scrollTo({top:0,behavior:reduceMotion?"auto":"smooth"});
+  if(location.hash) history.replaceState(null,"",location.pathname+location.search);
+});
+
 </script>
 </body></html>
 <style>
