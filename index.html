@@ -39,6 +39,25 @@ header{background:rgba(23,25,27,.97);backdrop-filter:blur(12px);border-bottom-co
 .contact .kicker{color:#d9c7a3}.contact h2 em{color:#d9c7a3}.contact p{color:#e5eee8}.contact .email{color:#e3d2ae}.contact .btn{border-color:#e9eee9;color:#f4f1e9}.contact .btn.primary{background:#f4f1e9;color:#1e382f}.contact .btn:hover{background:#d8795e;border-color:#d8795e;color:#fff}
 @media(max-width:780px){.portrait{width:170px;aspect-ratio:1/1;border-radius:50%}}
 @media(max-width:420px){.portrait{width:150px;aspect-ratio:1/1;border-radius:50%}}
+
+/* Scrolling stability: keep native browser scrolling and avoid costly paint effects */
+html{scroll-behavior:auto!important;overflow-y:auto;overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch}
+body{overflow-x:clip;touch-action:pan-y;overscroll-behavior-x:none}
+header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.reveal{will-change:auto!important;backface-visibility:visible;transform:none;transition:opacity .35s ease}
+.reveal.show{transform:none}
+.tickerline{will-change:auto;transform:none}
+@media(max-width:780px){
+  html{scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .tickerline{animation-duration:75s}
+  header{position:relative}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .tickerline{animation:none!important}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style></head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><div class="links"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
