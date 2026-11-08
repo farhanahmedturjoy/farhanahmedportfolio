@@ -203,6 +203,17 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">05 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg?v=2" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree · 2024</p></div></div><span class="mono">Academic background</span></div></div></section>
 <section class="contact" id="contact"><div class="wrap contactgrid"><span class="kicker">06 — Contact</span><div><h2>Good work<br>starts with <em>a hello.</em></h2><p>Interested in IT Support, NOC, Network Support, and ISP Operations roles. Let’s connect.</p><div class="actions"><a class="btn primary" href="mailto:farhanahmedturjoy@gmail.com">Email Farhan ↗</a><a class="btn" href="tel:+8801865121692">Call 01865121692 ↗</a><a class="btn" href="https://github.com/farhanahmedturjoy" target="_blank" rel="noreferrer">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/farhanahmedcse/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/tr.turjoy.2025/" target="_blank" rel="noreferrer">Facebook ↗</a></div><a class="email" href="mailto:farhanahmedturjoy@gmail.com">farhanahmedturjoy@gmail.com</a></div></div></section>
 </main>
+<aside class="side-scroll" id="sideScroll" aria-label="Page section navigation">
+  <span class="side-scroll-label">SCROLL</span>
+  <div class="side-scroll-track"><span class="side-scroll-progress" id="sideScrollProgress"></span></div>
+  <div class="side-scroll-dots">
+    <button type="button" data-target="profile" aria-label="Go to Profile" title="Profile"></button>
+    <button type="button" data-target="experience" aria-label="Go to Experience" title="Experience"></button>
+    <button type="button" data-target="skills" aria-label="Go to Capabilities" title="Capabilities"></button>
+    <button type="button" data-target="education" aria-label="Go to Education" title="Education"></button>
+    <button type="button" data-target="contact" aria-label="Go to Contact" title="Contact"></button>
+  </div>
+</aside>
 <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
@@ -297,6 +308,39 @@ document.addEventListener("click",event=>{
   if(!siteLinks.contains(event.target)&&!menuToggle.contains(event.target))closeSiteMenu();
 });
 
+/* Left-side scroll position and section navigator */
+const sideScroll=document.getElementById("sideScroll");
+const sideProgress=document.getElementById("sideScrollProgress");
+const sideDots=[...sideScroll.querySelectorAll("[data-target]")];
+const sideSections=sideDots.map(dot=>document.getElementById(dot.dataset.target)).filter(Boolean);
+sideDots.forEach(dot=>dot.addEventListener("click",()=>{
+  const target=document.getElementById(dot.dataset.target);
+  if(target)smoothPageScroll(target.getBoundingClientRect().top+window.scrollY-82);
+}));
+let sideScrollFrame=false;
+function updateSideScroll(){
+  if(sideScrollFrame)return;
+  sideScrollFrame=true;
+  requestAnimationFrame(()=>{
+    const maxScroll=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+    const progress=Math.min(1,Math.max(0,window.scrollY/maxScroll));
+    sideProgress.style.height=(progress*100)+"%";
+    const marker=window.scrollY+window.innerHeight*.42;
+    let active=0;
+    sideSections.forEach((section,index)=>{if(section.getBoundingClientRect().top+window.scrollY<=marker)active=index;});
+    sideDots.forEach((dot,index)=>{
+      dot.classList.toggle("active",index===active);
+      if(index===active)dot.setAttribute("aria-current","location");
+      else dot.removeAttribute("aria-current");
+    });
+    sideScroll.classList.toggle("is-visible",window.scrollY>100);
+    sideScrollFrame=false;
+  });
+}
+window.addEventListener("scroll",updateSideScroll,{passive:true});
+window.addEventListener("resize",updateSideScroll);
+updateSideScroll();
+
 </script>
 
 <style>
@@ -368,6 +412,19 @@ section[id]{scroll-margin-top:82px}
   .navnote{margin-left:auto;margin-right:12px}
 }
 @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
+/* Minimal left-side scroll navigator */
+.side-scroll{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:25;display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0;pointer-events:none;transition:opacity .35s ease}
+.side-scroll.is-visible{opacity:1;pointer-events:auto}
+.side-scroll-label{font-size:9px;letter-spacing:2px;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);margin-bottom:3px}
+.side-scroll-track{position:relative;width:2px;height:112px;background:var(--line);border-radius:4px;overflow:hidden}
+.side-scroll-progress{position:absolute;top:0;left:0;width:100%;height:0;background:var(--accent);border-radius:4px;transition:height .12s linear}
+.side-scroll-dots{display:flex;flex-direction:column;align-items:center;gap:13px}
+.side-scroll-dots button{width:7px;height:7px;padding:0;border:1px solid var(--muted);border-radius:50%;background:var(--bg);cursor:pointer;transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease}
+.side-scroll-dots button:hover,.side-scroll-dots button.active{transform:scale(1.55);background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 15%,transparent)}
+.side-scroll-dots button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:1100px){.side-scroll{left:9px}}
+@media(max-width:780px){.side-scroll{display:none}}
+@media(prefers-reduced-motion:reduce){.side-scroll,.side-scroll-dots button{transition:none}}
 /* Site-wide classic Times New Roman typography */
 html, body, body *, body *::before, body *::after {
   font-family: "Times New Roman", Times, serif !important;
