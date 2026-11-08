@@ -505,10 +505,6 @@ section[id]{scroll-margin-top:82px}
 @media(max-width:1100px){.side-scroll{left:9px}}
 @media(max-width:780px){.side-scroll{display:none}}
 @media(prefers-reduced-motion:reduce){.side-scroll,.side-scroll-dots button{transition:none}}
-/* Site-wide classic Times New Roman typography */
-html, body, body *, body *::before, body *::after {
-  font-family: "Times New Roman", Times, serif !important;
-}
 </style>
 
 <style>
@@ -549,4 +545,39 @@ body *{font-family:inherit}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+</style>
+
+
+<style>
+/* Restore the earlier cool slate-blue portfolio palette */
+:root{
+  --bg:#f4f6f9;
+  --ink:#172235;
+  --muted:#566477;
+  --line:#d4dce6;
+  --red:#2454a6;
+  --blue:#2454a6;
+  --accent:#2454a6;
+}
+html,body{background:#f4f6f9!important;color:#172235!important}
+body{font-family:"Space Grotesk",sans-serif!important}
+body *{font-family:inherit}
+header{background:rgba(244,246,249,.96)!important;border-bottom:1px solid #d4dce6!important}
+.work{background:#e9eef5!important}
+.workrow,.workrow:last-child{border-color:#cbd6e2!important}
+.workbody p{color:#42536a!important}
+.skill p,.eduitem p,.workmeta,.worklist,.stat small{color:#566477!important}
+.tag{border-color:#c5d0dc!important;color:#40536b!important}
+.contact{background:#2454a6!important;color:#fff!important}
+.footer{background:#1d427c!important;border-top-color:#5478b3!important}
+.contact .kicker,.contact h2 em,.contact .email{color:#dce8fb!important}
+.contact p{color:#e8effa!important}
+.portrait{background:#fff!important;border:0!important;box-shadow:0 0 0 1px rgba(36,84,166,.16)!important}
+.portrait img{object-fit:contain!important;object-position:center!important;filter:none!important;mix-blend-mode:normal!important;opacity:1!important}
+.portrait-label{background:rgba(23,34,53,.9)!important;color:#fff!important}
+.topology-panel{border-color:#46566b}
+:focus-visible{outline:2px solid #2454a6!important;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
