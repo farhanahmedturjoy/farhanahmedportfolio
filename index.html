@@ -164,18 +164,30 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 }
 
 
-/* Small technical line icons for selected equipment tags */
-.device-tag{display:inline-flex;align-items:center;gap:6px}
-.device-tag .device-icon{width:13px;height:13px;display:inline-grid;place-items:center;flex:0 0 13px;color:#f0a087}
-.device-tag .device-icon svg{width:13px;height:13px;display:block;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
-@media(max-width:780px){.device-tag{gap:5px}.device-tag .device-icon{width:12px;height:12px;flex-basis:12px}.device-tag .device-icon svg{width:12px;height:12px}}
+
+/* First-impression equipment icon strip — hero only */
+.hero-equipment{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;margin:19px 0 4px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:760px}
+.equipment-item{display:inline-flex;align-items:center;gap:6px;color:#d9ddd6;font:10px "DM Mono",monospace;letter-spacing:.055em;text-transform:uppercase;white-space:nowrap}
+.equipment-item svg{width:16px;height:16px;fill:none;stroke:var(--red);stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+@media(max-width:780px){.hero-equipment{gap:10px 14px;margin-top:16px;padding:11px 0}.equipment-item{font-size:9px}.equipment-item svg{width:15px;height:15px}}
 </style></head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><div class="links"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
 <section class="hero"><div class="wrap"><div class="topline"><span class="kicker">IT/Networks</span><span class="small">NOAKHALI, BANGLADESH / 01</span></div>
 <div class="hero-grid"><h1>Farhan<br><em>Ahmed.</em></h1><div class="portrait"><span class="fa">FA</span><img src="https://avatars.githubusercontent.com/u/321280729?v=4" alt="Farhan Ahmed" onerror="this.style.display='none'"><span class="portrait-label">IT / NETWORKS</span></div></div>
-<div class="hero-bottom"><div><p class="lead">IT & Network Support professional with hands-on ISP experience in <strong>network troubleshooting, monitoring, and broadband operations.</strong></p><div class="actions"><a class="btn primary" href="#experience">Explore experience ↘</a><a class="btn" href="./assets/Farhan-Ahmed-CV.pdf" target="_blank" rel="noreferrer">View CV ↗</a><a class="btn" href="mailto:farhanahmedturjoy@gmail.com">Contact ↗</a></div></div><aside class="sideintro">CSE graduate · ISP operations · Technical support · Network reliability</aside></div></div></section>
+<div class="hero-bottom"><div><p class="lead">IT & Network Support professional with hands-on ISP experience in <strong>network troubleshooting, monitoring, and broadband operations.</strong></p>
+<div class="hero-equipment" aria-label="Technical equipment experience">
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="1.5"/><path d="M9 20h6m-3-4v4"/></svg>PC</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 12-4 4 7-12 4z"/><path d="m15 6 3-2 3 5-3 2M8 16l-1 4m-3 0h7"/></svg>CCTV</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M6 14h12"/></svg>Switch</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M6 8h2m2 0h2m2 0h2m-8 6h12m-9 6v2m6-2v2"/></svg>OLT</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6m-6 4h6m-3 4h.01"/></svg>ONU</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0m-10 4a4 4 0 0 1 6 0m-3 4h.01"/></svg>Wi-Fi</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="11" rx="2"/><path d="M7 9V5m10 4V5M7 14h.01M11 14h.01M15 14h.01"/></svg>Router</span>
+  <span class="equipment-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v6m8-6v6M6 9h12v3a6 6 0 0 1-12 0zm6 9v3"/></svg>Cable</span>
+</div>
+<div class="actions"><a class="btn primary" href="#experience">Explore experience ↘</a><a class="btn" href="./assets/Farhan-Ahmed-CV.pdf" target="_blank" rel="noreferrer">View CV ↗</a><a class="btn" href="mailto:farhanahmedturjoy@gmail.com">Contact ↗</a></div></div><aside class="sideintro">CSE graduate · ISP operations · Technical support · Network reliability</aside></div></div></section>
 <div class="ticker"><div class="tickerline"><span>NETWORK OPERATIONS</span><span>IT SUPPORT</span><span>MIKROTIK</span><span>ISP INFRASTRUCTURE</span><span>NETWORK MONITORING</span><span>PPPoE & VLAN</span><span>NETWORK OPERATIONS</span><span>IT SUPPORT</span><span>MIKROTIK</span><span>ISP INFRASTRUCTURE</span><span>NETWORK MONITORING</span><span>PPPoE & VLAN</span></div></div>
 <section class="section" id="profile"><div class="wrap about reveal"><div class="label">01 — Profile<br><br>Working approach</div><div><p class="aboutcopy">Hands-on experience supporting broadband services, monitoring access networks, troubleshooting connectivity, and coordinating service restoration. <span>Focused on uptime, clear communication, and dependable customer service.</span></p><div class="stats"><div class="stat"><b>ISP / IT</b><small>Operations experience</small></div><div class="stat"><b>L1–L2</b><small>Technical support</small></div><div class="stat"><b>Network-first</b><small>Service mindset</small></div></div></div></div></section>
 <section class="section work" id="experience"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">02 — Experience</span><h2>Keeping people<br><em>connected.</em></h2></div>
@@ -200,34 +212,6 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 <footer class="footer"><div class="wrap footrow"><span class="small">© <span id="year"></span> Farhan Ahmed</span><span class="small">IT · NETWORK OPERATIONS · BANGLADESH</span></div></footer>
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-
-/* Add restrained equipment icons only to relevant capability tags */
-const deviceIcons={
-  pc:'<rect x="2" y="2.8" width="16" height="11.5" rx="1.4"/><path d="M8 17h4M10 14.5V17M7 20h6"/>',
-  router:'<rect x="2" y="7" width="16" height="10" rx="2"/><path d="M6 11h.01M9 11h.01M12 11h.01M5 7V4m10 3V4M7 14h6"/>',
-  switch:'<rect x="2" y="5" width="16" height="12" rx="2"/><path d="M5 9h.01M8 9h.01M11 9h.01M14 9h.01M5 13h10"/>',
-  olt:'<rect x="2" y="4" width="16" height="14" rx="1.5"/><path d="M5 8h2m2 0h2m2 0h2M5 13h10M7 18v2m6-2v2"/>',
-  onu:'<rect x="4" y="3" width="12" height="16" rx="2"/><path d="M8 7h4M8 11h4M10 15h.01M7 19v1m6-1v1"/>',
-  wifi:'<path d="M2 8.5a12 12 0 0 1 16 0M5 12a7.5 7.5 0 0 1 10 0m-7 3.5a3 3 0 0 1 4 0M10 19h.01"/>',
-  cctv:'<path d="m3 8 10-3 3 6-10 3z"/><path d="m13 6 3-2 2 4-3 2M7 14l-1 4m-2 0h5"/>',
-  cable:'<path d="M7 3v5m6-5v5M5 8h10v3a5 5 0 0 1-10 0zM10 16v5"/>',
-  fingerprint:'<path d="M5 9a5 5 0 0 1 10 0c0 4-1 7-2 9M8 9a2 2 0 0 1 4 0c0 3-.3 5-1 7M2.5 10a7.5 7.5 0 0 1 15 0c0 2-.2 4-1 6M6 14c-.2 2-.7 3.5-1.5 5"/>',
-  printer:'<path d="M6 7V3h8v4M5 16H3V8h14v8h-2M6 13h8v6H6zM14 10h.01"/>'
-};
-const iconTargets=[
-  ["MikroTik / Winbox","router"],["LAN / WAN","cable"],["Computer Networks","pc"],
-  ["OLT / ONU","olt"],["EPON / GPON","onu"],["Mesh Wi-Fi","wifi"],
-  ["CCTV Setup","cctv"],["IP Cameras","cctv"],["Printer Support","printer"],["Fingerprint Devices","fingerprint"]
-];
-document.querySelectorAll(".tag").forEach(tag=>{
-  const match=iconTargets.find(([label])=>tag.textContent.trim()===label);
-  if(!match)return;
-  const [label,key]=match;
-  tag.classList.add("device-tag");
-  tag.insertAdjacentHTML("afterbegin",'<span class="device-icon" aria-hidden="true"><svg viewBox="0 0 20 22">'+deviceIcons[key]+'</svg></span>');
-});
-
-const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* Smooth, interruptible page navigation; native touch scrolling stays untouched. */
 let scrollAnimation=0;
