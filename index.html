@@ -175,7 +175,7 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
 <section class="hero"><div class="wrap"><div class="topline"><span class="kicker">IT/Networks</span><span class="small">NOAKHALI, BANGLADESH / 01</span></div>
-<div class="hero-grid"><h1>Farhan<br><em>Ahmed.</em></h1><div class="portrait"><span class="fa">FA</span><img src="./assets/farhan-ahmed-turjoy-profile.jpg" alt="Farhan Ahmed Turjoy"><span class="portrait-label">IT / NETWORKS</span></div></div>
+<div class="hero-grid"><h1>Farhan<br><em>Ahmed.</em></h1><div class="portrait"><span class="fa" aria-label="Farhan Ahmed monogram">FA</span><span class="portrait-label">IT / NETWORKS</span></div></div>
 <div class="hero-bottom"><div><p class="lead">IT & Network Support professional with hands-on ISP experience in <strong>network troubleshooting, monitoring, and broadband operations.</strong></p>
 <div class="hero-equipment" aria-label="Technical equipment experience">
   <span class="equipment-item" role="img" aria-label="Computer" title="Computer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="1.5"/><path d="M9 20h6m-3-4v4"/></svg></span>
@@ -717,4 +717,69 @@ html body header .navnote {
   color:#fffdf7!important;
 }
 html body header .links a:hover {color:#ff896b!important}
+</style>
+
+
+<style id="intentional-monogram-portrait">
+/* A deliberate branded monogram in place of the unavailable portrait image */
+.portrait{
+  background:radial-gradient(circle at 50% 42%,#39464a 0%,#242c30 48%,#17191b 100%)!important;
+  border:1px solid #78847f!important;
+  box-shadow:0 0 0 6px rgba(255,137,107,.08),0 18px 42px rgba(0,0,0,.34)!important;
+  display:grid!important;
+  place-items:center!important;
+  isolation:isolate;
+}
+.portrait::before{
+  content:"";
+  position:absolute;
+  width:72%;
+  aspect-ratio:1;
+  border:1px solid rgba(255,137,107,.42);
+  border-radius:50%;
+  box-shadow:0 0 0 13px rgba(255,255,255,.025),0 0 0 27px rgba(255,137,107,.07);
+  z-index:-1;
+}
+.portrait::after{
+  content:"";
+  position:absolute;
+  width:10px;height:10px;
+  right:22%;top:22%;
+  border-radius:50%;
+  background:#ff896b;
+  box-shadow:0 0 0 6px rgba(255,137,107,.13),0 0 18px rgba(255,137,107,.65);
+}
+.portrait img{display:none!important}
+.portrait .fa{
+  display:grid!important;
+  place-items:center;
+  width:48%;aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid rgba(255,253,247,.35);
+  background:linear-gradient(145deg,#303b40,#1b2226);
+  color:#fffdf7!important;
+  font:600 clamp(38px,5.3vw,62px)/1 "Space Grotesk",sans-serif!important;
+  letter-spacing:-.12em!important;
+  padding-right:.10em;
+  text-shadow:0 5px 22px rgba(0,0,0,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 28px rgba(0,0,0,.25);
+}
+.portrait-label{
+  bottom:12px!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  background:#202326!important;
+  color:#fffdf7!important;
+  border:1px solid #626b6d!important;
+  border-radius:20px!important;
+  padding:5px 10px!important;
+  font-size:9px!important;
+  letter-spacing:.12em!important;
+  white-space:nowrap;
+}
+@media(max-width:780px){
+  .portrait{width:clamp(116px,30vw,148px)!important}
+  .portrait .fa{font-size:38px!important}
+  .portrait-label{font-size:7px!important;bottom:8px!important}
+}
 </style>
