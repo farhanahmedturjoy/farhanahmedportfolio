@@ -444,3 +444,43 @@ html, body, body *, body *::before, body *::after {
   font-family: "Times New Roman", Times, serif !important;
 }
 </style>
+
+<style>
+
+/* Visual correction: balanced cool-neutral canvas, stronger contrast, natural portrait */
+:root{
+  --bg:#e8edf3;
+  --ink:#17263a;
+  --muted:#52647a;
+  --line:#c5d0dc;
+  --red:#2457a6;
+  --blue:#234b87;
+  --accent:#2457a6;
+}
+html,body{background:var(--bg)!important;color:var(--ink)!important}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}
+body *{font-family:inherit}
+.portrait{
+  background:#fff!important;
+  border:2px solid #2457a6!important;
+  box-shadow:0 8px 24px rgba(23,38,58,.14),0 0 0 5px rgba(36,87,166,.09)!important;
+}
+.portrait img{
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+  opacity:1!important;
+}
+.portrait-label{background:rgba(23,38,58,.88)!important;color:#fff!important}
+.side-scroll-track{background:#b8c5d4!important}
+.side-scroll-dots button{background:var(--bg)!important;border-color:#6b7f98!important}
+.side-scroll-dots button.active,.side-scroll-dots button:hover{background:var(--accent)!important;border-color:var(--accent)!important}
+.btn{border-color:var(--ink)}
+.btn.primary{background:var(--ink);color:#fff}
+:focus-visible{outline-color:#2457a6!important}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+</style>
