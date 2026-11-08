@@ -172,7 +172,7 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 @media(max-width:780px){.hero-equipment{gap:10px 14px;margin-top:16px;padding:11px 0}.equipment-item{font-size:9px}.equipment-item svg{width:15px;height:15px}}
 </style></head>
 <body>
-<header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><div class="links"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
+<header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
 <section class="hero"><div class="wrap"><div class="topline"><span class="kicker">IT/Networks</span><span class="small">NOAKHALI, BANGLADESH / 01</span></div>
 <div class="hero-grid"><h1>Farhan<br><em>Ahmed.</em></h1><div class="portrait"><span class="fa">FA</span><img src="https://avatars.githubusercontent.com/u/321280729?v=4" alt="Farhan Ahmed" onerror="this.style.display='none'"><span class="portrait-label">IT / NETWORKS</span></div></div>
@@ -220,7 +220,7 @@ function smoothPageScroll(destination){
   const start=window.scrollY;
   const maxScroll=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
   const end=Math.max(0,Math.min(destination,maxScroll));
-  if(reduceMotion||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
   const distance=Math.abs(end-start);
   const duration=Math.min(1150,Math.max(650, distance*0.42));
   const started=performance.now();
@@ -273,6 +273,28 @@ updateBackToTop();
 backToTop.addEventListener("click",()=>{
   smoothPageScroll(0);
   if(location.hash) history.replaceState(null,"",location.pathname+location.search);
+});
+
+/* Responsive navigation menu and reliable section selection */
+const menuToggle=document.getElementById("menuToggle");
+const siteLinks=document.getElementById("siteLinks");
+function closeSiteMenu(){
+  siteLinks.classList.remove("mobile-open");
+  menuToggle.classList.remove("active");
+  menuToggle.setAttribute("aria-expanded","false");
+  menuToggle.setAttribute("aria-label","Open navigation menu");
+}
+menuToggle.addEventListener("click",()=>{
+  const opening=!siteLinks.classList.contains("mobile-open");
+  siteLinks.classList.toggle("mobile-open",opening);
+  menuToggle.classList.toggle("active",opening);
+  menuToggle.setAttribute("aria-expanded",String(opening));
+  menuToggle.setAttribute("aria-label",opening?"Close navigation menu":"Open navigation menu");
+});
+siteLinks.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener("click",closeSiteMenu));
+document.addEventListener("keydown",event=>{if(event.key==="Escape")closeSiteMenu();});
+document.addEventListener("click",event=>{
+  if(!siteLinks.contains(event.target)&&!menuToggle.contains(event.target))closeSiteMenu();
 });
 
 </script>
@@ -329,6 +351,23 @@ section[id]{scroll-margin-top:82px}
 </style>
 
 <style>
+/* Responsive navigation: working section selector on phones and tablets */
+.menu-toggle{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:42px;height:42px;padding:8px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);cursor:pointer}
+.menu-toggle span{display:block;width:19px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.menu-toggle.active span:first-child{transform:translateY(7px) rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:last-child{transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:780px){
+  nav{position:relative}
+  .menu-toggle{display:flex;order:3;flex:0 0 auto}
+  .links{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:30;flex-direction:column;gap:0;padding:8px;background:#202326;border:1px solid #555a5e;border-radius:0 0 12px 12px;box-shadow:0 14px 28px rgba(0,0,0,.28)}
+  .links.mobile-open{display:flex}
+  .links a,.links a:not(:last-child){display:block;padding:12px 13px;color:#fffdf7;border-bottom:1px solid #454a4d;font-size:13px}
+  .links a:last-child{border-bottom:0}
+  .links a:active,.links a:hover{color:#ff896b;background:#2c3033}
+  .navnote{margin-left:auto;margin-right:12px}
+}
+@media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
 /* Site-wide classic Times New Roman typography */
 html, body, body *, body *::before, body *::after {
   font-family: "Times New Roman", Times, serif !important;
