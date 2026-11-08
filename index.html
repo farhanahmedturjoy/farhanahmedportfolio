@@ -682,3 +682,39 @@ em,.kicker,.logo b,.sectionhead h2 em,.aboutcopy span,.skillnum,.workmeta b,.edu
   border-color:#ff896b!important;
 }
 </style>
+
+<style id="remove-light-shade-from-top-navigation">
+/* Keep the complete top navigation row on the original solid charcoal surface */
+html body header,
+html body header.header,
+html body header nav,
+html body header .wrap,
+html body header .nav,
+html body header .links,
+html body header .navnote {
+  background-color:#17191b!important;
+  color:#fffdf7!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+html body header {
+  opacity:1!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  border-bottom:1px solid #555a5e!important;
+}
+html body header::before,
+html body header::after,
+html body header nav::before,
+html body header nav::after {
+  content:none!important;
+  display:none!important;
+}
+html body header .logo,
+html body header .links a,
+html body header .navnote {
+  color:#fffdf7!important;
+}
+html body header .links a:hover {color:#ff896b!important}
+</style>
