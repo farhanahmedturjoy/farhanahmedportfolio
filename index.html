@@ -276,6 +276,44 @@ backToTop.addEventListener("click",()=>{
 });
 
 </script>
+
+<style>
+/* Compact first-screen hero: keep all primary actions visible without scrolling */
+.hero{padding:24px 0 30px}
+.topline{margin-bottom:18px}
+.hero-grid{grid-template-columns:1fr 190px;gap:36px;align-items:center}
+.hero h1{font-size:clamp(64px,9.5vw,112px);line-height:.84}
+.portrait{width:180px}
+.hero-bottom{margin-top:18px;grid-template-columns:1fr 190px;gap:30px}
+.lead{font-size:clamp(17px,1.9vw,22px);line-height:1.35}
+.hero-equipment{width:100%;max-width:none;display:flex;justify-content:space-between;align-items:center;gap:12px;margin:13px 0 2px;padding:12px 4px}
+.equipment-item{flex:1;justify-content:center}
+.equipment-item svg{width:30px;height:30px;stroke-width:1.55}
+.actions{margin-top:14px;gap:10px}
+.btn{padding:10px 14px}
+@media(max-width:780px){
+  .hero{padding:19px 0 25px}
+  .topline{margin-bottom:15px}
+  .hero-grid{grid-template-columns:minmax(0,1fr) 112px;gap:12px;align-items:center}
+  .hero h1{font-size:clamp(53px,13vw,76px);line-height:.86}
+  .portrait{width:108px}
+  .hero-bottom{grid-template-columns:1fr;gap:0;margin-top:15px}
+  .sideintro{display:none}
+  .lead{font-size:17px;line-height:1.35}
+  .hero-equipment{width:100%;gap:5px;margin:12px 0 0;padding:11px 0}
+  .equipment-item{flex:1;justify-content:center}
+  .equipment-item svg{width:27px;height:27px}
+  .actions{display:flex;flex-wrap:nowrap;gap:7px;margin-top:13px}
+  .actions .btn{flex:1;justify-content:center;gap:5px;padding:10px 7px;font-size:10px;white-space:nowrap}
+}
+@media(max-width:380px){
+  .hero h1{font-size:50px}
+  .portrait{width:96px}
+  .actions .btn{font-size:9px;padding:9px 5px}
+  .equipment-item svg{width:24px;height:24px}
+}
+</style>
+
 </body></html>
 <style>
 /* Consistent smooth section navigation on desktop and mobile */
