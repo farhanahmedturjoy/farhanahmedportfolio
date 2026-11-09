@@ -847,3 +847,9 @@ section[id]{scroll-margin-top:82px}
 .hero-grid .portrait::before,.hero-grid .portrait::after{content:none!important;display:none!important}
 .hero-grid .portrait{isolation:isolate!important}
 </style>
+
+<style id="crop-photo-edge-artifact-20261109">
+/* The supplied circular photo has a tiny leftover background fleck at its lower-right edge. Zoom the photo slightly inside the clipped circle so that edge artifact sits outside the visible frame. */
+.hero-grid .portrait{overflow:hidden!important;border-radius:50%!important}
+.hero-grid .portrait img{transform:scale(1.13)!important;transform-origin:50% 50%!important;object-fit:cover!important;object-position:50% 50%!important}
+</style>
