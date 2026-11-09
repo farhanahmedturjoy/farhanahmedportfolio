@@ -215,6 +215,54 @@ section[id]{scroll-margin-top:82px}
 }
 </style>
 
+
+<style id="hero-motion-spacing-refresh-20261109">
+/* Lift the moving skill ticker slightly; give the equipment labels a little more breathing room below. */
+.hero-equipment{margin-top:25px!important}
+.ticker{position:relative;margin-top:-8px!important}
+@media(max-width:780px){
+  .hero-equipment{margin-top:21px!important}
+  .ticker{margin-top:-5px!important}
+}
+/* Replace circular orbiting profile labels with restrained floating motion. */
+.hero-grid .portrait{overflow:visible!important}
+.hero-grid .portrait::before,
+.hero-grid .portrait::after{
+  animation:none!important;
+  top:auto!important;
+  left:auto!important;
+  height:24px!important;
+  padding:0 11px!important;
+  border-radius:7px!important;
+  transform:none!important;
+  transition:transform .3s ease,box-shadow .3s ease!important;
+}
+.hero-grid .portrait::before{
+  content:"IT"!important;
+  top:-13px!important;
+  left:12%!important;
+  animation:profile-tag-float 3.4s ease-in-out infinite!important;
+}
+.hero-grid .portrait::after{
+  content:"NETWORKS"!important;
+  right:-15px!important;
+  bottom:22px!important;
+  animation:profile-tag-float 3.8s ease-in-out -1.2s infinite!important;
+}
+@keyframes profile-tag-float{
+  0%,100%{translate:0 0;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+  50%{translate:0 -6px;box-shadow:0 8px 18px rgba(0,0,0,.25),0 0 12px rgba(255,137,107,.14)}
+}
+@media(max-width:780px){
+  .hero-grid .portrait::before,.hero-grid .portrait::after{height:21px!important;padding:0 9px!important;font-size:8px!important}
+  .hero-grid .portrait::before{top:-10px!important;left:8%!important}
+  .hero-grid .portrait::after{right:-10px!important;bottom:18px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-grid .portrait::before,.hero-grid .portrait::after{animation:none!important;translate:0 0!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
