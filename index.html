@@ -918,3 +918,74 @@ section[id]{scroll-margin-top:82px}
   .tickerline{padding:10px 0!important}
 }
 </style>
+
+
+<style id="minimal-profile-orbit-labels-20261109">
+/* Subtle orbiting IT / NETWORKS labels around the profile photo. */
+.hero-grid .portrait{
+  overflow:visible!important;
+  isolation:isolate!important;
+}
+.hero-grid .portrait img{
+  border-radius:50%!important;
+  z-index:1!important;
+}
+.hero-grid .portrait .portrait-label{display:none!important}
+.hero-grid .portrait::before,
+.hero-grid .portrait::after{
+  position:absolute!important;
+  top:50%!important;
+  left:50%!important;
+  z-index:3!important;
+  display:grid!important;
+  place-items:center!important;
+  width:auto!important;
+  height:23px!important;
+  padding:0 10px!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  border-radius:999px!important;
+  background:rgba(27,31,33,.94)!important;
+  color:#f4f2eb!important;
+  font:500 9px/1 "DM Mono",monospace!important;
+  letter-spacing:.13em!important;
+  white-space:nowrap!important;
+  pointer-events:none!important;
+  box-shadow:0 4px 12px rgba(0,0,0,.2)!important;
+  backface-visibility:hidden;
+}
+.hero-grid .portrait::before{
+  content:"IT"!important;
+  animation:orbit-it 18s linear infinite!important;
+}
+.hero-grid .portrait::after{
+  content:"NETWORKS"!important;
+  animation:orbit-networks 18s linear infinite!important;
+  border-color:rgba(255,137,107,.42)!important;
+  color:#ffb49d!important;
+}
+@keyframes orbit-it{
+  from{transform:translate(-50%,-50%) rotate(0deg) translateY(-116px) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg) translateY(-116px) rotate(-360deg)}
+}
+@keyframes orbit-networks{
+  from{transform:translate(-50%,-50%) rotate(180deg) translateY(-116px) rotate(-180deg)}
+  to{transform:translate(-50%,-50%) rotate(540deg) translateY(-116px) rotate(-540deg)}
+}
+@media(max-width:780px){
+  .hero-grid .portrait::before,.hero-grid .portrait::after{height:21px!important;padding:0 8px!important;font-size:8px!important}
+  .hero-grid .portrait::before{animation-name:orbit-it-mobile!important}
+  .hero-grid .portrait::after{animation-name:orbit-networks-mobile!important}
+}
+@keyframes orbit-it-mobile{
+  from{transform:translate(-50%,-50%) rotate(0deg) translateY(-88px) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg) translateY(-88px) rotate(-360deg)}
+}
+@keyframes orbit-networks-mobile{
+  from{transform:translate(-50%,-50%) rotate(180deg) translateY(-88px) rotate(-180deg)}
+  to{transform:translate(-50%,-50%) rotate(540deg) translateY(-88px) rotate(-540deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-grid .portrait::before{animation:none!important;transform:translate(-50%,-50%) translateY(-116px)!important}
+  .hero-grid .portrait::after{animation:none!important;transform:translate(-50%,-50%) translateY(116px)!important}
+}
+</style>
