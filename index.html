@@ -170,7 +170,52 @@ header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 .equipment-item{display:inline-flex;align-items:center;gap:6px;color:#d9ddd6;font:10px "DM Mono",monospace;letter-spacing:.055em;text-transform:uppercase;white-space:nowrap}
 .equipment-item svg{width:16px;height:16px;fill:none;stroke:var(--red);stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 @media(max-width:780px){.hero-equipment{gap:10px 14px;margin-top:16px;padding:11px 0}.equipment-item{font-size:9px}.equipment-item svg{width:15px;height:15px}}
-</style></head>
+</style>
+<style id="deep-green-contact-contrast-and-smoothness-20261109">
+/* Deep forest-green contact section with high-contrast, readable content */
+.contact{
+  background:#062f20!important;
+  color:#ffffff!important;
+  border-top:1px solid #285844;
+}
+.contact .kicker{color:#c8e2d1!important}
+.contact h2,.contact h2 em{color:#ffffff!important}
+.contact h2 em{color:#d8c49a!important}
+.contact p{color:#e6f1ea!important;line-height:1.8}
+.contact .email{color:#f0d9a8!important}
+.contact a:not(.btn){text-decoration-color:rgba(240,217,168,.55)}
+.contact .btn{color:#ffffff!important;border-color:#d4e5da!important}
+.contact .btn.primary{background:#f2f5f0!important;color:#073321!important;border-color:#f2f5f0!important}
+.contact .btn:hover,.contact .btn.primary:hover{background:#d8c49a!important;color:#09291d!important;border-color:#d8c49a!important}
+.footer{background:#041f16!important;color:#e8f1eb!important;border-top:1px solid #315d48!important}
+.footer *{color:#e8f1eb!important}
+
+/* Lift secondary text contrast across the dark portfolio without changing its layout */
+body{color:#fffdf7}
+.sideintro,.workmeta,.worklist,.label,.stat small,.skill p,.eduitem p,
+.workbody p,.topology-label{color:#d2d8d2!important}
+.tag{color:#e8eee9!important;border-color:#69736d!important}
+.navnote{color:#d2d8d2!important}
+.links a{color:#fffdf7!important}
+.links a:hover{color:#ffad91!important}
+.equipment-item{color:#edf1ec!important}
+:focus-visible{outline:2px solid #d8c49a!important;outline-offset:4px}
+
+/* Keep the same controlled, interruptible smooth navigation on desktop and phones */
+html{scroll-behavior:auto!important;scroll-padding-top:82px}
+section[id]{scroll-margin-top:82px}
+@media(max-width:780px){
+  html{scroll-padding-top:68px}
+  section[id]{scroll-margin-top:68px}
+  .contact{padding:62px 0}
+  .contact p{font-size:14px;line-height:1.85}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+}
+</style>
+
+</head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
@@ -233,7 +278,8 @@ function smoothPageScroll(destination){
   const end=Math.max(0,Math.min(destination,maxScroll));
   if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
   const distance=Math.abs(end-start);
-  const duration=Math.min(1150,Math.max(650, distance*0.42));
+  const isPhone=window.matchMedia("(max-width: 780px)").matches;
+  const duration=Math.min(isPhone?1450:1350,Math.max(isPhone?620:560,distance*(isPhone?0.58:0.52)));
   const started=performance.now();
   const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
   function frame(now){
