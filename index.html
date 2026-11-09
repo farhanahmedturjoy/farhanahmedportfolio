@@ -793,16 +793,14 @@ section[id]{scroll-margin-top:82px;}
 @media(max-width:780px){html{scroll-padding-top:68px}section[id]{scroll-margin-top:68px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
 </style>
-<script>
-/* Smooth, accessible in-page navigation without blocking native scrolling. */
-(() => {
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', event => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
-    });
-  });
-})();
-</script>
+<style id="final-profile-and-nav-fix">
+/* Use the supplied portrait in the FA profile circle; retain a clean dark frame. */
+.portrait{position:relative!important;display:block!important;aspect-ratio:1/1!important;border-radius:50%!important;overflow:hidden!important;background:#24282b!important;border:1px solid #6a7478!important;isolation:isolate!important}
+.portrait img{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 23%!important;border-radius:50%!important;filter:none!important;mix-blend-mode:normal!important;opacity:1!important}
+.portrait .fa{display:none!important}
+.portrait-label{z-index:2!important}
+/* The existing script provides one interruptible smooth-scroll handler. Avoid competing handlers. */
+html{scroll-behavior:auto!important;scroll-padding-top:82px}
+section[id]{scroll-margin-top:82px}
+@media(max-width:780px){html{scroll-padding-top:68px}section[id]{scroll-margin-top:68px}}
+</style>
