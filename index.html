@@ -41,8 +41,8 @@ header{background:rgba(23,25,27,.97);backdrop-filter:blur(12px);border-bottom-co
 @media(max-width:420px){.portrait{width:150px;aspect-ratio:1/1;border-radius:50%}}
 
 /* Scrolling stability: keep native browser scrolling and avoid costly paint effects */
-html{scroll-behavior:auto!important;overflow-y:auto;overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch;scroll-padding-top:82px}
-body{overflow-x:clip;touch-action:pan-y;overscroll-behavior-x:none}a[href^="#"]{scroll-behavior:smooth}section[id]{scroll-margin-top:82px}@media(max-width:780px){section[id]{scroll-margin-top:68px}}
+html{scroll-behavior:auto!important;overflow-y:auto;overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch;scroll-padding-top:82px;scroll-snap-type:y proximity}
+body{overflow-x:clip;touch-action:pan-y;overscroll-behavior-x:none}a[href^="#"]{scroll-behavior:smooth}section[id]{scroll-margin-top:82px;scroll-snap-align:start;scroll-snap-stop:normal}@media(max-width:780px){section[id]{scroll-margin-top:68px}}
 header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 .reveal{will-change:auto!important;backface-visibility:visible;transform:none;transition:opacity .35s ease}
 .reveal.show{transform:none}
@@ -326,7 +326,7 @@ function smoothPageScroll(destination){
   const end=Math.max(0,Math.min(destination,maxScroll));
   if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
   const distance=Math.abs(end-start);
-  const duration=Math.min(1150,Math.max(620,distance*.42));
+  const duration=Math.min(900,Math.max(480,distance*.34));
   const started=performance.now();
   /* Smooth acceleration and deceleration feels more natural for section jumps. */
   const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
