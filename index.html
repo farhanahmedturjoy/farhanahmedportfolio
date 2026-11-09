@@ -1114,3 +1114,35 @@ section[id]{scroll-margin-top:82px}
 
 
 
+
+
+<style id="profile-labels-and-hero-actions-final-20261109">
+.hero-grid .portrait{overflow:visible!important;isolation:isolate!important}
+.hero-grid .portrait img{z-index:1!important}
+.hero-grid .portrait-chip{
+ position:absolute!important;z-index:5!important;display:inline-flex!important;
+ align-items:center!important;justify-content:center!important;min-height:25px!important;
+ padding:0 11px!important;border:1px solid rgba(220,232,224,.38)!important;
+ border-radius:999px!important;background:rgba(17,27,25,.96)!important;
+ color:#f7f5ee!important;font:600 9px/1 "DM Mono",monospace!important;
+ letter-spacing:.16em!important;white-space:nowrap!important;pointer-events:none!important;
+ box-shadow:0 5px 16px rgba(0,0,0,.3)!important;
+ animation:chip-float 3.8s ease-in-out infinite!important;will-change:transform;
+}
+.hero-grid .portrait-chip-it{top:10%!important;left:-13px!important;animation-delay:-1.2s!important}
+.hero-grid .portrait-chip-net{right:-17px!important;bottom:12%!important;color:#ffc0aa!important;border-color:rgba(255,137,107,.55)!important;animation-delay:-2.4s!important}
+@keyframes chip-float{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.hero-bottom .actions{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:9px!important;width:100%!important;max-width:760px!important;align-items:stretch!important;
+}
+.hero-bottom .actions .btn{justify-content:center!important;min-width:0!important;padding:11px 9px!important;white-space:nowrap!important;gap:7px!important}
+@media(max-width:780px){
+ .hero-grid .portrait-chip{min-height:22px!important;padding:0 8px!important;font-size:8px!important}
+ .hero-grid .portrait-chip-it{left:-8px!important}.hero-grid .portrait-chip-net{right:-10px!important}
+ .hero-bottom .actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;max-width:none!important}
+ .hero-bottom .actions .btn{font-size:10px!important;padding:10px 5px!important;white-space:normal!important;text-align:center!important}
+}
+@media(max-width:360px){.hero-bottom .actions .btn{font-size:9px!important;padding:9px 3px!important}}
+@media(prefers-reduced-motion:reduce){.hero-grid .portrait-chip{animation:none!important;translate:0 0!important}}
+</style>
