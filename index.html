@@ -324,7 +324,10 @@ function smoothPageScroll(destination){
   const start=window.scrollY;
   const maxScroll=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
   const end=Math.max(0,Math.min(destination,maxScroll));
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
+  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* On phones, use native browser scrolling so touch momentum stays natural. */
+  if(window.matchMedia("(max-width: 780px)").matches){window.scrollTo({top:end,behavior:reduced?"auto":"smooth"});return;}
+  if(reduced||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
   const distance=Math.abs(end-start);
   const duration=Math.min(900,Math.max(480,distance*.34));
   const started=performance.now();
@@ -1157,4 +1160,22 @@ section[id]{scroll-margin-top:82px}
  .hero-bottom .actions .btn{min-height:40px!important;font-size:10px!important;padding:9px 7px!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+</style>
+<style id="mobile-native-scroll-and-section-rail-20261109">
+html{scroll-snap-type:none!important;overflow-y:auto!important;overscroll-behavior-y:auto!important;scroll-behavior:auto!important;-webkit-overflow-scrolling:auto!important}
+body{height:auto!important;min-height:100%!important;overflow-x:hidden!important;overflow-y:visible!important;touch-action:auto!important;overscroll-behavior-y:auto!important}
+section[id]{scroll-snap-align:none!important;scroll-snap-stop:normal!important}
+@media(max-width:780px){
+ html{scroll-padding-top:68px!important}
+ section[id]{scroll-margin-top:68px!important}
+ .side-scroll{display:flex!important;position:fixed!important;left:5px!important;top:50%!important;bottom:auto!important;z-index:30!important;transform:translateY(-50%)!important;gap:7px!important;padding:9px 5px!important;border:1px solid rgba(255,255,255,.13)!important;border-radius:20px!important;background:rgba(23,25,27,.88)!important;box-shadow:0 5px 18px rgba(0,0,0,.22)!important;opacity:0!important;pointer-events:none!important}
+ .side-scroll.is-visible{opacity:1!important;pointer-events:auto!important}
+ .side-scroll-label{display:none!important}
+ .side-scroll-track{height:72px!important;width:2px!important}
+ .side-scroll-dots{gap:10px!important}
+ .side-scroll-dots button{width:6px!important;height:6px!important;min-width:6px!important}
+ .side-scroll-dots button.active{transform:scale(1.45)!important}
+ .back-to-top{right:12px!important;bottom:14px!important;width:40px!important;height:40px!important}
+}
+@media(max-width:380px){.side-scroll{left:3px!important;padding:8px 4px!important}.side-scroll-track{height:62px!important}.side-scroll-dots{gap:8px!important}}
 </style>
