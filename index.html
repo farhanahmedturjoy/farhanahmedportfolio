@@ -263,6 +263,38 @@ section[id]{scroll-margin-top:82px}
 }
 </style>
 
+
+<style id="it-infrastructure-overview-20261110">
+.it-overview{position:relative;margin-top:30px;padding:25px 0 0;border-top:1px solid #52605a}
+.it-overview-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:20px}
+.it-overview-head .mono{color:#c4d0c8;font-size:10px;letter-spacing:.13em}
+.it-overview-head p{margin:0;color:#c2ccc5;font-size:11px}
+.it-hub{position:relative;display:flex;align-items:center;justify-content:center;gap:13px;width:min(340px,100%);margin:0 auto;padding:13px 18px;border:1px solid #688078;border-radius:11px;background:linear-gradient(145deg,#30423c,#26342f);text-align:left}
+.it-hub-mark{display:grid;place-items:center;width:36px;height:36px;flex:0 0 36px;border:1px solid #79c8b8;border-radius:9px;color:#79c8b8;font:500 12px "DM Mono",monospace}
+.it-hub strong,.it-endpoint strong{display:block;color:#fffdf7;font-size:12px;line-height:1.3}
+.it-hub small,.it-endpoint small{display:block;margin-top:4px;color:#c2ccc5;font-size:10px;line-height:1.4}
+.it-branches{display:grid;grid-template-columns:repeat(5,1fr);height:25px;width:80%;margin:0 auto}
+.it-branches span{border-top:1px solid #688078;border-left:1px solid #688078}
+.it-branches span:first-child{border-top-left-radius:7px}
+.it-branches span:last-child{border-right:1px solid #688078;border-top-right-radius:7px}
+.it-endpoints{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.it-endpoint{min-width:0;min-height:104px;padding:13px 11px;border:1px solid #53635d;border-radius:10px;background:linear-gradient(160deg,#303d39,#25312e)}
+.it-endpoint b{display:block;margin-bottom:12px;color:#79c8b8;font:10px "DM Mono",monospace}
+.it-endpoint strong{font-size:11px}
+.it-endpoint small{font-size:9px}
+@media(max-width:780px){
+ .it-overview{margin-top:23px;padding-top:20px}
+ .it-overview-head{display:block;margin-bottom:16px}
+ .it-overview-head p{margin-top:7px;line-height:1.5}
+ .it-hub{justify-content:flex-start;width:100%}
+ .it-branches{height:18px;width:90%}
+ .it-endpoints{grid-template-columns:1fr 1fr;gap:8px}
+ .it-endpoint{min-height:86px;padding:11px}
+ .it-endpoint:last-child{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){.it-endpoint{transition:none}}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -280,7 +312,20 @@ section[id]{scroll-margin-top:82px}
 <article class="skill reveal"><div class="skillnum">02</div><div><h3>IT Skills</h3><p>Practical computer, office technology, security-system, and end-user technical support.</p><div class="tags"><span class="tag">PC Setup & Troubleshooting</span><span class="tag">Hardware Diagnosis</span><span class="tag">Windows Support</span><span class="tag">Printer Setup & Support</span><span class="tag">CCTV Systems</span><span class="tag">NVR / DVR</span><span class="tag">IP Phone Setup</span><span class="tag">Biometric / Fingerprint Devices</span><span class="tag">Office IT Infrastructure</span><span class="tag">Wi-Fi & Mesh Router Setup</span><span class="tag">End-user Technical Support</span></div></div></article>
 </div></div></section>
 
-<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">04 — Network flow</span><h2>From upstream<br><em>to end user.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow"><div class="node"><b>01</b><strong>Internet</strong><small>Upstream</small></div><i>→</i><div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik</small></div><i>→</i><div class="node"><b>03</b><strong>Network Switch</strong><small>Core / distribution</small></div><i>→</i><div class="node"><b>04</b><strong>OLT</strong><small>EPON / GPON</small></div><i>→</i><div class="node"><b>05</b><strong>Splitter</strong><small>Optical distribution</small></div><i>→</i><div class="node"><b>06</b><strong>ONU</strong><small>Customer endpoint</small></div><i>→</i><div class="node"><b>07</b><strong>LAN / Wi-Fi</strong><small>PC · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div></div></div></section>
+<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">04 — Network flow</span><h2>From upstream<br><em>to end user.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow"><div class="node"><b>01</b><strong>Internet</strong><small>Upstream</small></div><i>→</i><div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik</small></div><i>→</i><div class="node"><b>03</b><strong>Network Switch</strong><small>Core / distribution</small></div><i>→</i><div class="node"><b>04</b><strong>OLT</strong><small>EPON / GPON</small></div><i>→</i><div class="node"><b>05</b><strong>Splitter</strong><small>Optical distribution</small></div><i>→</i><div class="node"><b>06</b><strong>ONU</strong><small>Customer endpoint</small></div><i>→</i><div class="node"><b>07</b><strong>LAN / Wi-Fi</strong><small>PC · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div>
+<div class="it-overview" aria-label="IT infrastructure support overview">
+  <div class="it-overview-head"><span class="mono">IT infrastructure overview</span><p>Office systems and connected devices supported through day-to-day IT assistance.</p></div>
+  <div class="it-hub"><span class="it-hub-mark">IT</span><div><strong>Office IT &amp; Network Support</strong><small>Setup · Connectivity · Troubleshooting</small></div></div>
+  <div class="it-branches" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="it-endpoints">
+    <div class="it-endpoint"><b>01</b><strong>PCs &amp; Windows</strong><small>Workstations · hardware</small></div>
+    <div class="it-endpoint"><b>02</b><strong>Printers</strong><small>Setup · user support</small></div>
+    <div class="it-endpoint"><b>03</b><strong>CCTV &amp; NVR</strong><small>Security systems · DVR</small></div>
+    <div class="it-endpoint"><b>04</b><strong>IP Telephony</strong><small>IP phone setup</small></div>
+    <div class="it-endpoint"><b>05</b><strong>Biometric &amp; Wi-Fi</strong><small>Access devices · mesh</small></div>
+  </div>
+</div>
+</div></div></section>
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">05 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg?v=2" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree · 2024</p></div></div><span class="mono">Academic background</span></div></div></section>
 <section class="contact" id="contact"><div class="wrap contactgrid"><span class="kicker">06 — Contact</span><div><h2>Good work<br>starts with <em>a hello.</em></h2><p>Interested in IT Support, NOC, Network Support, and ISP Operations roles. Let’s connect.</p><div class="actions"><a class="btn primary" href="mailto:farhanahmedturjoy@gmail.com">Email Farhan ↗</a><a class="btn" href="tel:+8801865121692">Call 01865121692 ↗</a><a class="btn" href="https://www.linkedin.com/in/farhanahmedcse/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/tr.turjoy.2025/" target="_blank" rel="noreferrer">Facebook ↗</a></div><a class="email" href="mailto:farhanahmedturjoy@gmail.com">farhanahmedturjoy@gmail.com</a></div></div></section>
 </main>
