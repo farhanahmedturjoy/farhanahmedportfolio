@@ -344,7 +344,7 @@ html body>header{isolation:isolate!important}
 <article class="skill reveal"><div class="skillnum">02</div><div><h3>IT Skills</h3><p>Practical computer, office technology, security-system, and end-user technical support.</p><div class="tags"><span class="tag">PC Setup & Troubleshooting</span><span class="tag">Hardware Diagnosis</span><span class="tag">Windows Support</span><span class="tag">Printer Setup & Support</span><span class="tag">CCTV Systems</span><span class="tag">NVR / DVR</span><span class="tag">IP Phone Setup</span><span class="tag">Biometric / Fingerprint Devices</span><span class="tag">Office IT Infrastructure</span><span class="tag">Wi-Fi & Mesh Router Setup</span><span class="tag">End-user Technical Support</span></div></div></article>
 </div></div></section>
 
-<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">04 — Network flow</span><h2>From upstream<br><em>to end user.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow"><div class="node"><b>01</b><strong>Internet</strong><small>Upstream</small></div><i>→</i><div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik</small></div><i>→</i><div class="node"><b>03</b><strong>Network Switch</strong><small>Core / distribution</small></div><i>→</i><div class="node"><b>04</b><strong>OLT</strong><small>EPON / GPON</small></div><i>→</i><div class="node"><b>05</b><strong>Splitter</strong><small>Optical distribution</small></div><i>→</i><div class="node"><b>06</b><strong>ONU</strong><small>Customer endpoint</small></div><i>→</i><div class="node"><b>07</b><strong>LAN / Wi-Fi</strong><small>PC · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div>
+<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">04 — Network flow</span><h2>Access network<br><em>to customer.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow topology-flow-redesigned"><div class="node"><b>01</b><strong>Network Switch</strong><small>Distribution layer</small></div><i>→</i><div class="node"><b>02</b><strong>OLT</strong><small>GPON / EPON access</small></div><i>→</i><div class="node"><b>03</b><strong>Optical Splitter</strong><small>Fiber distribution</small></div><i>→</i><div class="node"><b>04</b><strong>ONU</strong><small>Customer-side unit</small></div><i>→</i><div class="node"><b>05</b><strong>Customer Devices</strong><small>Wi-Fi · PC · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div>
 <div class="it-overview" aria-label="IT infrastructure support overview">
   <div class="it-overview-head"><span class="mono">IT infrastructure overview</span><p>Office systems and connected devices supported through day-to-day IT assistance.</p></div>
   <div class="it-hub"><span class="it-hub-mark">IT</span><div><strong>Office IT &amp; Network Support</strong><small>Setup · Connectivity · Troubleshooting</small></div></div>
@@ -910,6 +910,33 @@ html body .it-endpoint small{font-size:9px!important;margin-top:3px!important}
   html body .it-branches{height:13px!important}
   html body .it-endpoints{gap:6px!important}
   html body .it-endpoint{min-height:67px!important;padding:8px!important}
+}
+</style>
+
+
+<style id="redesigned-access-topology-20261110">
+/* A cleaner five-stage access-network path with stronger visual hierarchy. */
+html body .topology .sectionhead h2{max-width:760px}
+html body .topology-panel{padding:22px!important;background:linear-gradient(135deg,#172c28 0%,#203b34 52%,#172b30 100%)!important;border:1px solid #557267!important}
+html body .topology-label{display:flex;align-items:center;gap:10px;margin-bottom:21px!important;color:#c7d8ce!important}
+html body .topology-label:before{content:"";width:22px;height:2px;background:#79c8b8;display:inline-block}
+html body .topology-flow-redesigned{display:grid!important;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1.15fr)!important;align-items:center!important;gap:7px!important}
+html body .topology-flow-redesigned .node{min-height:112px!important;justify-content:flex-start!important;padding:14px 12px!important;border:1px solid #617b70!important;border-radius:12px!important;background:linear-gradient(155deg,#304b41,#243a33)!important;box-shadow:0 9px 22px rgba(0,0,0,.18)!important}
+html body .topology-flow-redesigned .node b{width:27px!important;height:27px!important;margin:0 0 13px!important;border:1px solid #82cdbb!important;border-radius:50%!important;color:#a6e1d2!important;background:rgba(121,200,184,.09)!important}
+html body .topology-flow-redesigned .node strong{font-size:13px!important;letter-spacing:0!important;color:#fff!important}
+html body .topology-flow-redesigned .node small{font-size:10px!important;color:#c5d8ce!important;line-height:1.4!important}
+html body .topology-flow-redesigned>i{display:grid!important;place-items:center!important;flex:none!important;width:24px!important;height:24px!important;border-radius:50%!important;color:#a6e1d2!important;background:rgba(121,200,184,.12)!important;font-size:13px!important}
+html body .topology-flow-redesigned .node:last-of-type{border-color:#82a99a!important;background:linear-gradient(155deg,#38564a,#2c443b)!important}
+html body .topology .workflow{margin-top:20px!important;padding-top:15px!important;border-color:#526f63!important}
+html body .topology .workflow p b{border-color:#59776a!important;background:#263d34!important;color:#eff8f2!important}
+@media(max-width:780px){
+ html body .topology-panel{padding:15px 13px!important}
+ html body .topology-flow-redesigned{display:flex!important;flex-direction:column!important;gap:5px!important}
+ html body .topology-flow-redesigned .node{width:100%!important;min-height:64px!important;padding:9px 12px 9px 48px!important;justify-content:center!important}
+ html body .topology-flow-redesigned .node b{left:12px!important;top:50%!important;width:23px!important;height:23px!important;margin:0!important}
+ html body .topology-flow-redesigned .node strong{font-size:12px!important}
+ html body .topology-flow-redesigned .node small{font-size:9px!important;margin-top:3px!important}
+ html body .topology-flow-redesigned>i{width:19px!important;height:19px!important;transform:rotate(90deg)!important;font-size:11px!important}
 }
 </style>
 
