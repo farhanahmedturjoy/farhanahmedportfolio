@@ -295,6 +295,38 @@ section[id]{scroll-margin-top:82px}
 @media(prefers-reduced-motion:reduce){.it-endpoint{transition:none}}
 </style>
 
+
+<style id="always-visible-navigation-20261110">
+/* Keep the primary navigation pinned and above every scrolling section. */
+html body>header{
+  position:sticky!important;
+  top:0!important;
+  z-index:1000!important;
+  width:100%!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  transform:none!important;
+  translate:none!important;
+  pointer-events:auto!important;
+}
+html body>header nav{position:relative!important;z-index:1!important}
+html body>header .links{z-index:1001!important}
+html body>header .links a{pointer-events:auto!important}
+html body main{position:relative!important;z-index:1!important}
+html body>header{isolation:isolate!important}
+@media(max-width:780px){
+  html body>header{position:sticky!important;top:0!important}
+  html body>header nav{min-height:60px!important}
+  html{scroll-padding-top:72px!important}
+  html body section[id]{scroll-margin-top:72px!important}
+}
+@media(min-width:781px){
+  html{scroll-padding-top:82px!important}
+  html body section[id]{scroll-margin-top:82px!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
