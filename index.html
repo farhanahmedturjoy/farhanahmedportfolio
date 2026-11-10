@@ -705,6 +705,55 @@ section[id]{scroll-margin-top:82px}
   .hero-grid .portrait .portrait-label::after{animation:none!important;will-change:auto!important}
 }
 </style>
+
+<style id="mobile-scrollbar-slim-and-refined-accent-20261110">
+/* A slimmer, quieter section rail on phones; desktop rail remains unchanged. */
+:root{
+  --red:#79c8b8!important;
+  --accent:#79c8b8!important;
+}
+@media(max-width:780px){
+  .side-scroll{
+    left:7px!important;
+    gap:5px!important;
+    padding:7px 3px!important;
+    border:1px solid rgba(180,215,204,.13)!important;
+    border-radius:14px!important;
+    background:rgba(20,29,29,.76)!important;
+    box-shadow:0 3px 12px rgba(0,0,0,.16)!important;
+  }
+  .side-scroll-track{width:1px!important;height:58px!important;background:#465653!important}
+  .side-scroll-progress{width:1px!important;background:#79c8b8!important}
+  .side-scroll-dots{gap:7px!important}
+  .side-scroll-dots button{
+    width:4px!important;height:4px!important;min-width:4px!important;
+    min-height:4px!important;padding:0!important;border:1px solid #9baea7!important;
+    background:#202726!important;
+  }
+  .side-scroll-dots button.active{transform:scale(1.35)!important;background:#79c8b8!important;border-color:#79c8b8!important}
+}
+@media(max-width:380px){
+  .side-scroll{left:5px!important;padding:6px 2px!important;gap:4px!important}
+  .side-scroll-track{height:50px!important}
+  .side-scroll-dots{gap:6px!important}
+}
+/* Replace the orange accent with a cool, restrained network-sage tone. */
+.kicker,.logo b,.sectionhead h2 em,.aboutcopy span,.skillnum,.workmeta b,.eduitem .mono,.email,
+.links a:hover,.equipment-item svg,.topology-flow .node b,.topology-flow>i,.workflow em{
+  color:#79c8b8!important;
+}
+.topline .kicker:before{background:#79c8b8!important}
+.portrait-label,.hero-grid .portrait-chip-net{border-color:rgba(121,200,184,.55)!important}
+.hero-grid .portrait-chip-net{color:#bce8dc!important}
+.hero-grid .portrait-chip-it{border-color:rgba(180,215,204,.38)!important}
+.hero-grid .portrait-chip{animation:none!important}
+.btn:hover,.contact .btn:hover,.contact .btn.primary:hover{background:#79c8b8!important;border-color:#79c8b8!important;color:#17201e!important}
+.back-to-top:hover{background:#79c8b8!important;border-color:#79c8b8!important;color:#17201e!important}
+.side-scroll-progress,.side-scroll-dots button.active,.side-scroll-dots button:hover{background:#79c8b8!important}
+:focus-visible{outline-color:#79c8b8!important}
+@media(prefers-reduced-motion:reduce){.hero-grid .portrait-chip{animation:none!important}}
+</style>
+
 </body></html>
 <style>
 /* Consistent smooth section navigation on desktop and mobile */
