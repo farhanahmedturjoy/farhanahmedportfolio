@@ -364,6 +364,12 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
   html{scroll-behavior:auto!important}
 }
 </style>
+<style id="butter-smooth-wheel-scroll-20261110">
+/* The wheel easing script owns desktop wheel motion; anchor links use explicit smooth behavior. */
+html{scroll-behavior:auto!important;scroll-snap-type:none!important}
+@media(max-width:780px){html{-webkit-overflow-scrolling:touch!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -435,6 +441,51 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
     smoothPageScroll(target.getBoundingClientRect().top+window.scrollY-offset);
   });
 });
+
+/* Butter-smooth desktop wheel scrolling; keep touch and trackpad gestures native on phones. */
+(()=>{
+  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+  if(reduced.matches||window.matchMedia("(max-width: 780px)").matches)return;
+  let targetY=window.scrollY;
+  let currentY=window.scrollY;
+  let frame=0;
+  let lastInput=0;
+  const maxY=()=>Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+  const stop=()=>{
+    if(frame){cancelAnimationFrame(frame);frame=0;}
+    targetY=currentY=window.scrollY;
+  };
+  const animate=()=>{
+    currentY+=(targetY-currentY)*0.14;
+    if(Math.abs(targetY-currentY)<0.65){
+      currentY=targetY;
+      window.scrollTo(0,currentY);
+      frame=0;
+      return;
+    }
+    window.scrollTo(0,currentY);
+    frame=requestAnimationFrame(animate);
+  };
+  window.addEventListener("wheel",event=>{
+    if(reduced.matches||window.matchMedia("(max-width: 780px)").matches||event.ctrlKey)return;
+    if(event.target.closest("input,textarea,select,[data-native-scroll]"))return;
+    event.preventDefault();
+    const scale=event.deltaMode===1?34:event.deltaMode===2?window.innerHeight:1;
+    const delta=Math.max(-180,Math.min(180,event.deltaY*scale));
+    if(!frame)targetY=currentY=window.scrollY;
+    targetY=Math.max(0,Math.min(maxY(),targetY+delta));
+    lastInput=performance.now();
+    if(!frame)frame=requestAnimationFrame(animate);
+  },{passive:false});
+  ["touchstart","pointerdown","keydown"].forEach(type=>{
+    window.addEventListener(type,event=>{
+      if(type==="pointerdown"&&event.pointerType==="mouse"&&event.target.closest("a,button"))return;
+      if(type==="keydown"&&!["ArrowUp","ArrowDown","PageUp","PageDown","Home","End"," "].includes(event.key))return;
+      stop();
+    },{passive:true});
+  });
+  window.addEventListener("resize",()=>{targetY=currentY=window.scrollY;},{passive:true});
+})();
 const revealItems=document.querySelectorAll(".reveal");
 if("IntersectionObserver" in window){
   const ob=new IntersectionObserver(es=>es.forEach(e=>{
