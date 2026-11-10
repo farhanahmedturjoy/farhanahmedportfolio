@@ -1336,3 +1336,52 @@ html body :focus-visible{outline-color:#79c8b8!important}
  html body .side-scroll-track{height:42px!important}
 }
 </style>
+
+<style id="absolute-accent-opacity-cleanup-20261110">
+/* Final global cleanup for legacy orange accents and washed-out controls. */
+:root{--red:#79c8b8!important;--accent:#79c8b8!important}
+html body{--red:#79c8b8!important;--accent:#79c8b8!important}
+html body .hero .actions a.btn,
+html body .hero .actions a.btn *,
+html body .contact .actions a.btn,
+html body .contact .actions a.btn *,
+html body .btn,
+html body .btn *,
+html body .equipment-item svg,
+html body .tickerline span:after,
+html body .portrait-chip-net,
+html body .hero-grid .portrait-chip-net,
+html body .contact .kicker,
+html body .contact h2 em,
+html body .contact .email{
+ opacity:1!important;filter:none!important;text-shadow:none!important;
+}
+html body .hero .actions a.btn.primary,
+html body .hero .actions a.btn.primary *,
+html body .hero .actions a.btn.primary:visited,
+html body .hero .actions a.btn.primary:link{
+ color:#17201e!important;background-color:#79c8b8!important;
+ border-color:#79c8b8!important;opacity:1!important;filter:none!important;
+}
+html body .hero .actions a.btn.primary:hover,
+html body .hero .actions a.btn.primary:focus-visible{
+ color:#101816!important;background-color:#a0dfd1!important;border-color:#a0dfd1!important;
+}
+html body .hero .actions a.btn:not(.primary){color:#fffdf7!important}
+html body .kicker,html body em,html body .logo b,html body .sectionhead h2 em,
+html body .aboutcopy span,html body .skillnum,html body .workmeta b,
+html body .eduitem .mono,html body .email,html body .equipment-item svg,
+html body .topology-flow .node b,html body .topology-flow>i,
+html body .workflow em,html body .portrait-chip-net{
+ color:#79c8b8!important;stroke:#79c8b8!important;
+}
+html body .tickerline span:after{color:#79c8b8!important}
+html body .hero-grid .portrait-chip-net{border-color:rgba(121,200,184,.55)!important}
+html body .links a:hover,html body .links a:active,
+html body .btn:hover,html body .btn:active,
+html body .back-to-top:hover{
+ color:#17201e!important;background:#79c8b8!important;border-color:#79c8b8!important;
+ opacity:1!important;filter:none!important;
+}
+html body :focus-visible{outline-color:#79c8b8!important}
+</style>
