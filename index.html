@@ -345,6 +345,25 @@ html body>header{isolation:isolate!important}
 }
 </style>
 
+
+<style id="consistent-smooth-scroll-fix-20261110">
+/* Remove conflicting auto-scroll overrides and keep anchor movement smooth everywhere. */
+html{
+  scroll-behavior:smooth!important;
+  scroll-snap-type:none!important;
+  overflow-y:auto!important;
+  scroll-padding-top:82px!important;
+}
+body{overflow-x:clip!important;touch-action:auto!important}
+section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
+@media(max-width:780px){
+  html{scroll-padding-top:68px!important}
+  section[id]{scroll-margin-top:68px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+}
+</style>
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -397,37 +416,13 @@ html body>header{isolation:isolate!important}
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* Smooth, interruptible page navigation; native touch scrolling stays untouched. */
-let scrollAnimation=0;
-function stopProgrammaticScroll(){
-  if(scrollAnimation){cancelAnimationFrame(scrollAnimation);scrollAnimation=0;}
-}
+/* Consistent native smooth navigation on desktop and mobile. */
 function smoothPageScroll(destination){
-  stopProgrammaticScroll();
-  const start=window.scrollY;
   const maxScroll=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
   const end=Math.max(0,Math.min(destination,maxScroll));
   const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  /* On phones, use native browser scrolling so touch momentum stays natural. */
-  if(window.matchMedia("(max-width: 780px)").matches){window.scrollTo({top:end,behavior:reduced?"auto":"smooth"});return;}
-  if(reduced||Math.abs(end-start)<2){window.scrollTo(0,end);return;}
-  const distance=Math.abs(end-start);
-  const duration=Math.min(900,Math.max(480,distance*.34));
-  const started=performance.now();
-  /* Smooth acceleration and deceleration feels more natural for section jumps. */
-  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
-  function frame(now){
-    const progress=Math.min(1,(now-started)/duration);
-    window.scrollTo(0,start+(end-start)*ease(progress));
-    if(progress<1)scrollAnimation=requestAnimationFrame(frame);
-    else scrollAnimation=0;
-  }
-  scrollAnimation=requestAnimationFrame(frame);
+  window.scrollTo({top:end,behavior:reduced?"auto":"smooth"});
 }
-["wheel","touchstart","pointerdown","keydown"].forEach(type=>{
-  window.addEventListener(type,stopProgrammaticScroll,{passive:true});
-});
-document.documentElement.style.scrollBehavior="auto";
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener("click",event=>{
     const id=link.getAttribute("href");
