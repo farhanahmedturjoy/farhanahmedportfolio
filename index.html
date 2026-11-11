@@ -1777,6 +1777,115 @@ html body .it-endpoint small{color:#d5e4ee!important}
 }
 </style>
 
+
+<style id="projects-dark-restore-20261111">
+/* Restore the academic projects section to the portfolio's dark visual system. */
+html body .projects{
+  background:
+    radial-gradient(ellipse at 88% 8%,rgba(68,137,130,.13),transparent 34%),
+    linear-gradient(135deg,#171c21 0%,#1c252b 54%,#202632 100%)!important;
+  color:#f5f4ef!important;
+  border-top:1px solid #46545a!important;
+  border-bottom:1px solid #46545a!important;
+  padding-top:84px!important;padding-bottom:90px!important;
+}
+html body .projects .sectionhead h2{color:#f5f4ef!important}
+html body .projects .sectionhead h2 em{color:#e58b70!important}
+html body .projects .sectionhead .kicker{color:#e58b70!important}
+html body .project-intro{
+  color:#c7d0ce!important;font-size:15px!important;line-height:1.75!important;
+}
+html body .project-grid{gap:18px!important;align-items:stretch!important}
+html body .project-card{
+  min-height:390px!important;padding:0!important;display:flex!important;
+  flex-direction:column!important;justify-content:flex-start!important;
+  overflow:hidden!important;border-radius:15px!important;
+  border:1px solid #43545a!important;
+  background:linear-gradient(155deg,#263840 0%,#202c33 100%)!important;
+  box-shadow:0 15px 34px rgba(0,0,0,.22)!important;
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease!important;
+}
+html body .project-card:nth-child(2){
+  background:linear-gradient(155deg,#2b3850 0%,#202b3d 100%)!important;
+  border-color:#4b5c78!important;
+}
+html body .project-card:nth-child(3){
+  background:linear-gradient(155deg,#29413f 0%,#1e302f 100%)!important;
+  border-color:#496c65!important;
+}
+html body .project-card:hover{
+  transform:translateY(-6px)!important;border-color:#83cabb!important;
+  box-shadow:0 23px 44px rgba(0,0,0,.34)!important;
+}
+html body .project-card:before{
+  content:"";order:0;display:block;position:relative;inset:auto;
+  width:100%;height:142px;flex:0 0 142px;border:0;border-radius:0;
+  background-color:#203b42;
+  background-image:
+    linear-gradient(90deg,rgba(132,196,187,.11) 1px,transparent 1px),
+    linear-gradient(rgba(132,196,187,.11) 1px,transparent 1px),
+    radial-gradient(circle at 50% 50%,rgba(132,196,187,.9) 0 4px,transparent 5px),
+    linear-gradient(90deg,transparent 49.7%,rgba(132,196,187,.55) 49.7% 50.3%,transparent 50.3%);
+  background-size:24px 24px,24px 24px,100% 100%,100% 100%;
+  box-shadow:inset 0 -30px 40px rgba(15,22,26,.2)!important;
+}
+html body .project-card:nth-child(2):before{
+  background-color:#26354c;
+  background-image:
+    linear-gradient(90deg,rgba(157,177,231,.1) 1px,transparent 1px),
+    linear-gradient(rgba(157,177,231,.1) 1px,transparent 1px),
+    radial-gradient(circle at 50% 44%,rgba(210,222,255,.95) 0 12px,rgba(116,145,205,.55) 13px 19px,transparent 20px),
+    radial-gradient(circle at 34% 68%,rgba(157,177,231,.8) 0 5px,transparent 6px),
+    radial-gradient(circle at 66% 68%,rgba(157,177,231,.8) 0 5px,transparent 6px);
+  background-size:24px 24px,24px 24px,100% 100%,100% 100%,100% 100%;
+}
+html body .project-card:nth-child(3):before{
+  background-color:#24403e;
+  background-image:
+    linear-gradient(90deg,rgba(145,213,190,.1) 1px,transparent 1px),
+    linear-gradient(rgba(145,213,190,.1) 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 48%,rgba(188,235,218,.16) 0 34px,transparent 35px),
+    radial-gradient(circle at 43% 47%,#a8dfca 0 3px,transparent 4px),
+    radial-gradient(circle at 50% 47%,#a8dfca 0 3px,transparent 4px),
+    radial-gradient(circle at 57% 47%,#a8dfca 0 3px,transparent 4px);
+  background-size:24px 24px,24px 24px,100% 100%,100% 100%,100% 100%,100% 100%;
+}
+html body .project-card .project-top,
+html body .project-card h3,
+html body .project-card p,
+html body .project-card .tags,
+html body .project-card .project-link{margin-left:23px!important;margin-right:23px!important}
+html body .project-card .project-top{
+  order:1;margin-top:20px!important;color:#a9dfd2!important;
+}
+html body .project-card .project-mark{
+  border:1px solid rgba(191,224,216,.35)!important;border-radius:9px!important;
+  background:rgba(8,20,28,.25)!important;color:#f4fbf7!important;
+  width:36px!important;height:36px!important;
+}
+html body .project-card h3{
+  order:2;margin-top:17px!important;margin-bottom:10px!important;
+  color:#fffdf7!important;font-size:24px!important;line-height:1.2!important;
+}
+html body .project-card p{
+  order:3;color:#d5dfdc!important;font-size:14px!important;line-height:1.8!important;
+}
+html body .project-card .tags{order:4;margin-top:auto!important;padding:10px 0 23px!important}
+html body .project-card .tag{
+  border-color:rgba(173,208,198,.32)!important;
+  color:#e1eee8!important;background:rgba(10,24,29,.28)!important;
+}
+@media(max-width:900px){html body .project-card{min-height:350px!important}}
+@media(max-width:780px){
+  html body .projects{padding-top:66px!important;padding-bottom:68px!important}
+  html body .project-grid{grid-template-columns:1fr!important;gap:15px!important}
+  html body .project-card{min-height:0!important}
+  html body .project-card:before{height:116px;flex-basis:116px}
+  html body .project-card h3{font-size:23px!important}
+}
+@media(prefers-reduced-motion:reduce){html body .project-card{transition:none!important}}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
