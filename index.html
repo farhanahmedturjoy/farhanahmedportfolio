@@ -1417,6 +1417,54 @@ html body .btn:focus-visible{
 @media(max-width:900px){.project-grid{grid-template-columns:1fr 1fr}.project-intro{margin-left:0}}
 @media(max-width:600px){.projects{padding-top:62px;padding-bottom:64px}.project-grid{grid-template-columns:1fr}.project-card{min-height:0;padding:20px}.project-card h3{margin-top:20px}}
 @media(prefers-reduced-motion:reduce){.project-card{transition:none}}
+
+/* Readability pass: remove tiny supporting text across desktop and mobile */
+html{font-size:16px}
+body{font-size:16px;line-height:1.75}
+.mono,.kicker,.small{font-size:13px!important;line-height:1.65;letter-spacing:.055em}
+.links{font-size:14px}
+.navnote,.sideintro{font-size:14px;line-height:1.75}
+.portrait-label{font-size:12px}
+.btn{font-size:14px;line-height:1.45;padding:12px 17px}
+.tickerline span{font-size:12px;letter-spacing:.09em}
+.label,.workmeta,.worklist{font-size:13px;line-height:1.75}
+.company-mark{font-size:13px;line-height:1.6}
+.company-mark span{font-size:13px}
+.workbody h4{font-size:14px;line-height:1.6}
+.workbody h4.role-tech{font-size:12px;line-height:1.8}
+.workbody p{font-size:16px;line-height:1.8}
+.skillnum{font-size:13px}
+.skill p{font-size:15px;line-height:1.8}
+.tag{font-size:12px;line-height:1.5;padding:5px 9px}
+.topology-label,.workflow>span{font-size:12px}
+.topology-flow .node b{font-size:12px}
+.topology-flow .node small{font-size:12px;line-height:1.55}
+.workflow p{font-size:14px;line-height:1.7}
+.workflow p b{font-size:12px}
+.stat small{font-size:12px;line-height:1.6}
+.eduitem p{font-size:15px;line-height:1.7}
+.eduitem .mono{font-size:13px}
+.contact p{font-size:16px;line-height:1.8}
+.email{font-size:14px}
+.footer .small{font-size:12px!important}
+@media(max-width:780px){
+  body{font-size:16px}
+  .links{font-size:14px}
+  .hero .kicker,.topline .kicker{font-size:12px!important}
+  .sideintro{font-size:14px}
+  .workbody p,.skill p,.eduitem p,.contact p{font-size:15px;line-height:1.8}
+  .workbody h4{font-size:14px}
+  .workbody h4.role-tech{font-size:12px}
+  .tag{font-size:12px}
+  .topology-flow .node small{font-size:12px}
+  .workmeta,.worklist,.label,.company-mark{font-size:12px}
+  .footer .small{font-size:12px!important}
+}
+@media(max-width:380px){
+  .mono,.kicker,.small{font-size:12px!important}
+  .tag{font-size:11.5px}
+}
+
 </style>
 </head>
 <body>
