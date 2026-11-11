@@ -2171,6 +2171,49 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
 });
 
 /* Use the browser's native wheel, trackpad and touch scrolling for consistent momentum on every device. */
+/* Butter-smooth desktop wheel easing; touch and trackpad gestures remain native on phones. */
+(()=>{
+  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+  if(reduced.matches||window.matchMedia("(max-width: 780px)").matches)return;
+  let targetY=window.scrollY;
+  let currentY=window.scrollY;
+  let frame=0;
+  const maxY=()=>Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+  const stop=()=>{
+    if(frame){cancelAnimationFrame(frame);frame=0;}
+    targetY=currentY=window.scrollY;
+  };
+  const animate=()=>{
+    currentY+=(targetY-currentY)*0.14;
+    if(Math.abs(targetY-currentY)<0.65){
+      currentY=targetY;
+      window.scrollTo(0,currentY);
+      frame=0;
+      return;
+    }
+    window.scrollTo(0,currentY);
+    frame=requestAnimationFrame(animate);
+  };
+  window.addEventListener("wheel",event=>{
+    if(reduced.matches||window.matchMedia("(max-width: 780px)").matches||event.ctrlKey)return;
+    if(event.target.closest("input,textarea,select,[data-native-scroll]"))return;
+    event.preventDefault();
+    const scale=event.deltaMode===1?34:event.deltaMode===2?window.innerHeight:1;
+    const delta=Math.max(-180,Math.min(180,event.deltaY*scale));
+    if(!frame)targetY=currentY=window.scrollY;
+    targetY=Math.max(0,Math.min(maxY(),targetY+delta));
+    if(!frame)frame=requestAnimationFrame(animate);
+  },{passive:false});
+  ["touchstart","pointerdown","keydown"].forEach(type=>{
+    window.addEventListener(type,event=>{
+      if(type==="pointerdown"&&event.pointerType==="mouse"&&event.target.closest("a,button"))return;
+      if(type==="keydown"&&!("ArrowUp ArrowDown PageUp PageDown Home End  ").split(" ").includes(event.key))return;
+      stop();
+    },{passive:true});
+  });
+  window.addEventListener("resize",()=>{targetY=currentY=window.scrollY;},{passive:true});
+})();
+
 const revealItems=document.querySelectorAll(".reveal");
 if("IntersectionObserver" in window){
   const ob=new IntersectionObserver(es=>es.forEach(e=>{
