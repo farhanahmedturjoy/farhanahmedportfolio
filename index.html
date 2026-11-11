@@ -1465,6 +1465,24 @@ body{font-size:16px;line-height:1.75}
   .tag{font-size:11.5px}
 }
 
+
+/* Make every topology label readable and explain technical terms */
+.topology-flow-redesigned .node{min-height:142px;padding:19px 15px}
+.topology-flow-redesigned .node b{width:31px;height:31px;font-size:13px;margin-bottom:13px}
+.topology-flow-redesigned .node strong{font-size:16px;line-height:1.35;letter-spacing:-.015em;overflow-wrap:anywhere}
+.topology-flow-redesigned .node small{font-family:"Space Grotesk",sans-serif;font-size:14px;line-height:1.55;color:#e0e8e2;margin-top:9px}
+.topology .topology-label{font-size:13px;letter-spacing:.12em}
+.topology .workflow>span{font-size:13px}
+.topology .workflow p b{font-family:"Space Grotesk",sans-serif;font-size:14px;letter-spacing:0;padding:7px 12px}
+@media(max-width:780px){
+ .topology-flow-redesigned .node{min-height:92px;padding:15px 14px 15px 62px}
+ .topology-flow-redesigned .node b{left:16px;width:32px;height:32px;font-size:13px}
+ .topology-flow-redesigned .node strong{font-size:16px;line-height:1.35}
+ .topology-flow-redesigned .node small{font-size:14px;line-height:1.55}
+ .topology .workflow>span{font-size:13px}
+ .topology .workflow p b{font-size:13px;padding:7px 10px}
+}
+
 </style>
 </head>
 <body>
@@ -1488,7 +1506,7 @@ body{font-size:16px;line-height:1.75}
 <article class="skill reveal"><div class="skillnum">02</div><div><h3>IT Skills</h3><p>Practical computer, office technology, security-system, and end-user technical support.</p><div class="tags"><span class="tag">PC Setup & Troubleshooting</span><span class="tag">Hardware Diagnosis</span><span class="tag">Windows Support</span><span class="tag">Printer Setup & Support</span><span class="tag">CCTV Systems</span><span class="tag">NVR / DVR</span><span class="tag">IP Phone Setup</span><span class="tag">Biometric / Fingerprint Devices</span><span class="tag">Office IT Infrastructure</span><span class="tag">Wi-Fi & Mesh Router Setup</span><span class="tag">End-user Technical Support</span></div></div></article>
 </div></div></section>
 
-<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>Access network<br><em>to customer.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow topology-flow-redesigned"><div class="node"><b>01</b><strong>Network Switch</strong><small>Distribution layer</small></div><i>→</i><div class="node"><b>02</b><strong>OLT</strong><small>GPON / EPON access</small></div><i>→</i><div class="node"><b>03</b><strong>Optical Splitter</strong><small>Fiber distribution</small></div><i>→</i><div class="node"><b>04</b><strong>ONU</strong><small>Customer-side unit</small></div><i>→</i><div class="node"><b>05</b><strong>Customer Devices</strong><small>Wi-Fi · PC · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div>
+<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>Access network<br><em>to customer.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow topology-flow-redesigned"><div class="node"><b>01</b><strong>Main Network Switch</strong><small>Distributes the network connection</small></div><i>→</i><div class="node"><b>02</b><strong>Fiber Line Terminal (OLT)</strong><small>Connects the ISP network to fiber lines</small></div><i>→</i><div class="node"><b>03</b><strong>Fiber Splitter</strong><small>Shares the fiber signal across users</small></div><i>→</i><div class="node"><b>04</b><strong>Customer Fiber Unit (ONU)</strong><small>Receives the fiber connection at the site</small></div><i>→</i><div class="node"><b>05</b><strong>Customer Devices</strong><small>Wi-Fi router · Computer · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div>
 <div class="it-overview" aria-label="IT infrastructure support overview">
   <div class="it-overview-head"><span class="mono">IT infrastructure overview</span><p>Office systems and connected devices supported through day-to-day IT assistance.</p></div>
   <div class="it-hub"><span class="it-hub-mark">IT</span><div><strong>Office IT &amp; Network Support</strong><small>Setup · Connectivity · Troubleshooting</small></div></div>
