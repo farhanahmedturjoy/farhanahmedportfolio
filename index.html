@@ -2047,6 +2047,51 @@ html body .sectionhead .kicker{margin-bottom:10px!important}
   html body .edu .label{font-size:11px!important;letter-spacing:.045em!important}
 }
 </style>
+
+<style id="cross-device-native-smoothness-20261111">
+/* One consistent, low-latency scrolling model across desktop and mobile. */
+html{
+  scroll-behavior:auto!important;
+  scroll-snap-type:none!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+  overscroll-behavior-y:auto!important;
+  scroll-padding-top:82px!important;
+}
+body{
+  min-height:100vh!important;
+  overflow-x:clip!important;
+  overflow-y:visible!important;
+  touch-action:pan-y!important;
+  overscroll-behavior-x:none!important;
+}
+section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
+.reveal{
+  opacity:0!important;
+  transform:translate3d(0,10px,0)!important;
+  transition:opacity .48s cubic-bezier(.22,.61,.36,1),transform .48s cubic-bezier(.22,.61,.36,1)!important;
+  backface-visibility:hidden;
+}
+.reveal.show{opacity:1!important;transform:translate3d(0,0,0)!important}
+@media(max-width:780px){
+  html{
+    scroll-padding-top:68px!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  section[id]{scroll-margin-top:68px!important}
+  body{touch-action:pan-y!important}
+  .reveal{
+    transform:translate3d(0,7px,0)!important;
+    transition:opacity .38s ease-out,transform .38s ease-out!important;
+  }
+  .reveal.show{transform:translate3d(0,0,0)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .reveal,.reveal.show{opacity:1!important;transform:none!important;transition:none!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -2125,50 +2170,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
   });
 });
 
-/* Butter-smooth desktop wheel scrolling; keep touch and trackpad gestures native on phones. */
-(()=>{
-  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
-  if(reduced.matches||window.matchMedia("(max-width: 780px)").matches)return;
-  let targetY=window.scrollY;
-  let currentY=window.scrollY;
-  let frame=0;
-  let lastInput=0;
-  const maxY=()=>Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
-  const stop=()=>{
-    if(frame){cancelAnimationFrame(frame);frame=0;}
-    targetY=currentY=window.scrollY;
-  };
-  const animate=()=>{
-    currentY+=(targetY-currentY)*0.14;
-    if(Math.abs(targetY-currentY)<0.65){
-      currentY=targetY;
-      window.scrollTo(0,currentY);
-      frame=0;
-      return;
-    }
-    window.scrollTo(0,currentY);
-    frame=requestAnimationFrame(animate);
-  };
-  window.addEventListener("wheel",event=>{
-    if(reduced.matches||window.matchMedia("(max-width: 780px)").matches||event.ctrlKey)return;
-    if(event.target.closest("input,textarea,select,[data-native-scroll]"))return;
-    event.preventDefault();
-    const scale=event.deltaMode===1?34:event.deltaMode===2?window.innerHeight:1;
-    const delta=Math.max(-180,Math.min(180,event.deltaY*scale));
-    if(!frame)targetY=currentY=window.scrollY;
-    targetY=Math.max(0,Math.min(maxY(),targetY+delta));
-    lastInput=performance.now();
-    if(!frame)frame=requestAnimationFrame(animate);
-  },{passive:false});
-  ["touchstart","pointerdown","keydown"].forEach(type=>{
-    window.addEventListener(type,event=>{
-      if(type==="pointerdown"&&event.pointerType==="mouse"&&event.target.closest("a,button"))return;
-      if(type==="keydown"&&!["ArrowUp","ArrowDown","PageUp","PageDown","Home","End"," "].includes(event.key))return;
-      stop();
-    },{passive:true});
-  });
-  window.addEventListener("resize",()=>{targetY=currentY=window.scrollY;},{passive:true});
-})();
+/* Use the browser's native wheel, trackpad and touch scrolling for consistent momentum on every device. */
 const revealItems=document.querySelectorAll(".reveal");
 if("IntersectionObserver" in window){
   const ob=new IntersectionObserver(es=>es.forEach(e=>{
