@@ -1632,6 +1632,151 @@ html body .project-card .tag{background:rgba(8,20,28,.18)!important;border-color
 }
 </style>
 
+
+<style id="bold-topology-project-redesign-20261111">
+/* Stronger editorial art direction: less generic card UI, more technical visual storytelling. */
+html body .projects{
+  background:#e8edf3!important;color:#17263a!important;
+  border-top:1px solid #b8c8d9!important;border-bottom:1px solid #b8c8d9!important;
+  padding-top:92px!important;padding-bottom:100px!important;
+}
+html body .projects .sectionhead h2{color:#17263a!important}
+html body .projects .sectionhead h2 em{color:#2457a6!important}
+html body .projects .sectionhead .kicker{color:#2457a6!important}
+html body .project-intro{color:#43566d!important;font-size:16px!important;max-width:650px!important}
+html body .project-grid{gap:18px!important;align-items:stretch!important}
+html body .project-card{
+  min-height:420px!important;padding:0!important;display:flex!important;
+  flex-direction:column!important;justify-content:flex-start!important;
+  overflow:hidden!important;border-radius:5px!important;
+  border:1px solid #b9c8d8!important;background:#f7f9fc!important;
+  box-shadow:0 10px 24px rgba(23,38,58,.07)!important;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease!important;
+}
+html body .project-card:hover{
+  transform:translateY(-7px)!important;border-color:#2457a6!important;
+  box-shadow:0 22px 40px rgba(23,38,58,.15)!important;
+}
+html body .project-card:before{
+  content:"";order:0;display:block;position:relative;inset:auto;
+  width:100%;height:168px;flex:0 0 168px;border:0;border-radius:0;
+  background-color:#d9e6f3;background-image:
+    linear-gradient(90deg,rgba(36,87,166,.08) 1px,transparent 1px),
+    linear-gradient(rgba(36,87,166,.08) 1px,transparent 1px);
+  background-size:22px 22px;box-shadow:none!important;transform:none!important;
+}
+html body .project-card:nth-child(1):before{
+  background-color:#dce8f5;
+  background-image:
+    linear-gradient(90deg,rgba(36,87,166,.09) 1px,transparent 1px),
+    linear-gradient(rgba(36,87,166,.09) 1px,transparent 1px),
+    radial-gradient(circle at 50% 50%,#2457a6 0 4px,transparent 5px),
+    linear-gradient(90deg,transparent 49.5%,#2457a6 49.5% 50.5%,transparent 50.5%);
+  background-size:22px 22px,22px 22px,100% 100%,100% 100%;
+}
+html body .project-card:nth-child(2):before{
+  background-color:#e1e9e8;
+  background-image:
+    linear-gradient(90deg,rgba(22,112,105,.08) 1px,transparent 1px),
+    linear-gradient(rgba(22,112,105,.08) 1px,transparent 1px),
+    radial-gradient(circle at 50% 45%,#f6fbfa 0 15px,#167c76 16px 21px,transparent 22px),
+    radial-gradient(circle at 35% 65%,#167c76 0 7px,transparent 8px),
+    radial-gradient(circle at 65% 65%,#167c76 0 7px,transparent 8px);
+  background-size:22px 22px,22px 22px,100% 100%,100% 100%,100% 100%;
+}
+html body .project-card:nth-child(3):before{
+  background-color:#e7e5f2;
+  background-image:
+    linear-gradient(90deg,rgba(91,76,155,.08) 1px,transparent 1px),
+    linear-gradient(rgba(91,76,155,.08) 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 46%,#fff 0 35px,transparent 36px),
+    radial-gradient(circle at 43% 45%,#6556a5 0 3px,transparent 4px),
+    radial-gradient(circle at 50% 45%,#6556a5 0 3px,transparent 4px),
+    radial-gradient(circle at 57% 45%,#6556a5 0 3px,transparent 4px);
+  background-size:22px 22px,22px 22px,100% 100%,100% 100%,100% 100%,100% 100%;
+}
+html body .project-card .project-top,
+html body .project-card h3,
+html body .project-card p,
+html body .project-card .tags,
+html body .project-card .project-link{margin-left:23px!important;margin-right:23px!important}
+html body .project-card .project-top{order:1;margin-top:20px!important;color:#2457a6!important}
+html body .project-card .project-mark{border:0;border-radius:0;background:#17263a;color:white;width:34px;height:34px}
+html body .project-card h3{order:2;margin-top:17px!important;margin-bottom:10px!important;color:#17263a!important;font-size:25px!important;line-height:1.12!important}
+html body .project-card p{order:3;color:#4a5c70!important;font-size:15px!important;line-height:1.7!important}
+html body .project-card .tags{order:4;margin-top:auto!important;padding:10px 0 24px!important}
+html body .project-card .tag{border-color:#bdcada!important;color:#344c67!important;background:#edf2f8!important}
+html body .topology{background:#111b29!important;padding-top:92px!important;padding-bottom:100px!important}
+html body .topology .sectionhead h2{color:#f4f7fb!important}
+html body .topology .sectionhead h2 em{color:#7fd4c5!important}
+html body .topology .sectionhead .kicker{color:#7fd4c5!important}
+html body .topology-panel{
+  border:1px solid #38516b!important;border-radius:4px!important;
+  padding:clamp(22px,3.5vw,42px)!important;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(60,121,161,.22),transparent 55%),
+    #172638!important;
+  box-shadow:0 24px 60px rgba(0,0,0,.28)!important;
+}
+html body .topology-label{color:#b9d4e6!important;font-size:14px!important;letter-spacing:.15em!important}
+html body .topology-flow-redesigned{gap:8px!important}
+html body .topology-flow-redesigned .node{
+  min-height:190px!important;padding:20px 16px!important;
+  border:1px solid #466681!important;border-radius:4px!important;
+  background:#20394e!important;box-shadow:none!important;
+}
+html body .topology-flow-redesigned .node:nth-of-type(1){background:#1c4350!important;border-color:#4c9a9e!important}
+html body .topology-flow-redesigned .node:nth-of-type(2){background:#213e5d!important;border-color:#5c8fbd!important}
+html body .topology-flow-redesigned .node:nth-of-type(3){background:#303b60!important;border-color:#827fbd!important}
+html body .topology-flow-redesigned .node:nth-of-type(4){background:#1f514c!important;border-color:#5ba99b!important}
+html body .topology-flow-redesigned .node:nth-of-type(5){background:#345541!important;border-color:#8ab99a!important}
+html body .topology-flow-redesigned .node b{width:38px!important;height:38px!important;border-radius:50%!important;background:rgba(255,255,255,.08)!important;color:#d9f5ee!important;font-size:14px!important}
+html body .topology-flow-redesigned .node strong{font-size:16px!important;line-height:1.3!important;color:#fff!important}
+html body .topology-flow-redesigned .node small{font-size:13px!important;line-height:1.55!important;color:#d5e4ee!important}
+html body .topology-flow-redesigned>i{
+  background:transparent!important;border:0!important;color:#8ce0d0!important;
+  font-size:24px!important;width:24px!important
+}
+html body .topology .workflow{border-color:#405b70!important}
+html body .topology .workflow>span{color:#b9d4e6!important}
+html body .topology .workflow p b{background:#213b4d!important;border-color:#4c7588!important;color:#f3f8fa!important}
+html body .topology .workflow em{color:#8ce0d0!important}
+html body .it-overview{border-color:#405b70!important}
+html body .it-overview-head .mono{color:#b9d4e6!important}
+html body .it-overview-head p{color:#c9d8e3!important}
+html body .it-hub{background:#1e4550!important;border:1px solid #5ba99b!important;border-radius:4px!important}
+html body .it-endpoint{background:#20394e!important;border:1px solid #466681!important;border-radius:4px!important}
+html body .it-endpoint:nth-child(2){background:#213e5d!important}
+html body .it-endpoint:nth-child(3){background:#303b60!important}
+html body .it-endpoint:nth-child(4){background:#1f514c!important}
+html body .it-endpoint:nth-child(5){background:#345541!important}
+html body .it-endpoint strong{color:#fff!important}
+html body .it-endpoint small{color:#d5e4ee!important}
+@media(max-width:900px){
+ html body .project-grid{grid-template-columns:1fr 1fr!important}
+ html body .project-card{min-height:400px!important}
+}
+@media(max-width:780px){
+ html body .projects,html body .topology{padding-top:64px!important;padding-bottom:68px!important}
+ html body .project-grid{grid-template-columns:1fr!important;gap:15px!important}
+ html body .project-card{min-height:0!important}
+ html body .project-card:before{height:138px!important;flex-basis:138px!important}
+ html body .project-card h3{font-size:23px!important}
+ html body .project-card p{font-size:14px!important}
+ html body .project-card .tags{padding-bottom:20px!important}
+ html body .topology-panel{padding:18px 14px!important}
+ html body .topology-flow-redesigned{display:flex!important;flex-direction:column!important}
+ html body .topology-flow-redesigned .node{min-height:82px!important;padding:13px 13px 13px 58px!important}
+ html body .topology-flow-redesigned .node b{left:14px!important;top:50%!important}
+ html body .topology-flow-redesigned .node strong{font-size:15px!important}
+ html body .topology-flow-redesigned .node small{font-size:12px!important}
+ html body .topology-flow-redesigned>i{height:18px!important;transform:rotate(90deg)!important;font-size:18px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html body .project-card,html body .topology-flow-redesigned .node{transition:none!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
