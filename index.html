@@ -2012,6 +2012,41 @@ html body section.topology .it-endpoint small{font-size:11px!important;line-heig
 }
 @media(prefers-reduced-motion:reduce){html body section.projects .project-card,html body section.topology .topology-flow-redesigned .node{transition:none!important}}
 </style>
+<style id="section-labels-bold-readable-20261111">
+/* Clearer section markers and profile label, without changing layout or section sizing. */
+html body .topline .kicker,
+html body .sectionhead .kicker,
+html body .contact>.wrap>.kicker{
+  display:inline-block!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1.5!important;
+  letter-spacing:.075em!important;
+  color:var(--ink)!important;
+  opacity:1!important;
+  text-shadow:0 0 .01px currentColor!important;
+}
+html body .about>.label,
+html body .edu .label{
+  font-family:"DM Mono",monospace!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1.65!important;
+  letter-spacing:.055em!important;
+  color:var(--ink)!important;
+  opacity:1!important;
+}
+html body .topline .kicker:before{height:2px!important;width:24px!important}
+html body .sectionhead .kicker{margin-bottom:10px!important}
+@media(max-width:780px){
+  html body .topline .kicker,
+  html body .sectionhead .kicker,
+  html body .contact>.wrap>.kicker,
+  html body .about>.label,
+  html body .edu .label{font-size:11px!important;letter-spacing:.045em!important}
+}
+</style>
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
