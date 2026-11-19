@@ -2092,7 +2092,61 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
 }
 </style>
 
-</head>
+
+<style id="compact-animated-topology">
+.topology{padding:48px 0 72px}
+.topology .sectionhead{margin-bottom:26px;align-items:end}
+.topology-panel{position:relative;overflow:hidden;padding:clamp(16px,2.2vw,26px);border:1px solid #46534f;border-radius:14px;background:linear-gradient(135deg,#202a28,#1b2224 70%,#202b2a);box-shadow:0 12px 32px #0003}
+.topology-panel:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#a9c2b4 .7px,transparent .7px);background-size:18px 18px}
+.topology-label,.topology-flow,.topology-endpoints,.workflow,.it-overview{position:relative}
+.topology-label{display:flex;align-items:center;justify-content:space-between;color:#d3ddd5!important;font-size:10px;letter-spacing:.13em;margin-bottom:18px}
+.topology-live{display:inline-flex;align-items:center;gap:7px;color:#a9c9b5;font:9px "DM Mono",monospace}
+.topology-live i{width:6px;height:6px;border-radius:50%;background:#83d5a4;box-shadow:0 0 0 0 #83d5a455;animation:topologyPing 1.8s infinite}
+.topology-flow{display:flex;align-items:stretch;gap:7px}
+.topology-flow .node{position:relative;display:flex;flex:1 1 0;min-width:0;min-height:88px;flex-direction:column;justify-content:center;padding:11px 9px;border:1px solid #53645c;border-radius:9px;background:linear-gradient(155deg,#303d38,#25312e);transition:border-color .25s,transform .25s}
+.topology-flow .node:hover{border-color:#9bc6aa;transform:translateY(-3px)}
+.topology-flow .node b{display:grid;place-items:center;width:21px;height:21px;margin:0 0 8px;border:1px solid #83ae91;border-radius:6px;color:#a9d4b4;font:9px "DM Mono",monospace}
+.topology-flow .node strong{font-size:clamp(10px,1vw,13px);line-height:1.2;color:#fffdf7}
+.topology-flow .node small{font-size:9px;line-height:1.35;color:#c4d0c8;margin-top:5px}
+.topology-flow>i{display:grid;place-items:center;flex:0 0 12px;color:#9cc9aa;font-style:normal;font-size:15px;animation:topologyArrow 1.8s ease-in-out infinite}
+.topology-flow>i:nth-of-type(2){animation-delay:.15s}.topology-flow>i:nth-of-type(3){animation-delay:.3s}.topology-flow>i:nth-of-type(4){animation-delay:.45s}.topology-flow>i:nth-of-type(5){animation-delay:.6s}
+.topology-endpoints{display:flex;justify-content:flex-end;gap:7px;flex-wrap:wrap;margin-top:10px}
+.topology-endpoints span{padding:4px 8px;border:1px solid #4b5c53;border-radius:5px;color:#d4e1d7;background:#26342d;font:9px "DM Mono",monospace}
+.workflow{display:flex;align-items:center;gap:18px;margin-top:18px;padding-top:14px;border-top:1px solid #4b5b53}
+.workflow>span{color:#c4d0c8!important;font-size:9px;letter-spacing:.12em}
+.workflow p{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0}
+.workflow p b{display:inline-flex;align-items:center;min-height:25px;padding:4px 8px;border:1px solid #52645b;border-radius:5px;color:#f4f3eb;background:#293631;font:9px "DM Mono",monospace}
+.workflow em{color:#9bc9a8;font-size:11px}
+.it-overview{margin-top:19px;padding-top:16px;border-top:1px solid #4b5b53}
+.it-overview-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:11px}
+.it-overview-head .mono{color:#c8d7cd;font-size:9px;letter-spacing:.12em}
+.it-overview-head p{margin:0;color:#b9c6be;font-size:10px}
+.it-hub{display:flex;align-items:center;gap:10px;width:max-content;max-width:100%;margin:0 auto 12px;padding:9px 14px;border:1px solid #66816f;border-radius:8px;background:#293a31}
+.it-hub-mark{display:grid;place-items:center;width:25px;height:25px;border-radius:6px;background:#42654f;color:#fff;font:10px "DM Mono",monospace}
+.it-hub strong{display:block;color:#fffdf7;font-size:11px}.it-hub small{display:block;color:#c4d0c8;font-size:9px}
+.it-endpoints{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.it-endpoint{padding:9px 10px;border:1px solid #4b5c53;border-radius:7px;background:#252f2c;min-width:0}
+.it-endpoint b{display:block;color:#a9d4b4;font:9px "DM Mono",monospace;margin-bottom:5px}
+.it-endpoint strong{display:block;color:#fffdf7;font-size:10px;line-height:1.25}
+.it-endpoint small{display:block;color:#c0ccc4;font-size:9px;margin-top:3px}
+@keyframes topologyPing{0%{box-shadow:0 0 0 0 #83d5a455}70%{box-shadow:0 0 0 6px #83d5a400}100%{box-shadow:0 0 0 0 #83d5a400}}
+@keyframes topologyArrow{0%,100%{opacity:.45;transform:translateX(-2px)}50%{opacity:1;transform:translateX(2px)}}
+@media(max-width:780px){
+ .topology{padding:30px 0 56px}.topology-panel{padding:16px 13px;border-radius:11px}
+ .topology-label{margin-bottom:13px}.topology-flow{display:flex;flex-direction:column;gap:5px}
+ .topology-flow .node{width:100%;min-height:0;padding:9px 12px 9px 43px;flex:none}
+ .topology-flow .node b{position:absolute;left:11px;top:50%;transform:translateY(-50%);margin:0}
+ .topology-flow .node strong{font-size:12px}.topology-flow .node small{font-size:9px;margin-top:2px}
+ .topology-flow>i{height:12px;flex:none;font-size:12px;transform:rotate(90deg);animation:topologyArrowMobile 1.8s ease-in-out infinite}
+ .topology-endpoints{justify-content:flex-start;margin-top:8px}
+ .workflow{align-items:flex-start;flex-direction:column;gap:8px;margin-top:14px;padding-top:12px}
+ .it-overview{margin-top:14px;padding-top:12px}.it-overview-head{display:block}.it-overview-head p{margin-top:3px}
+ .it-hub{margin-bottom:9px}.it-endpoints{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .it-endpoint:last-child{grid-column:1/-1}
+}
+@keyframes topologyArrowMobile{0%,100%{opacity:.45;transform:rotate(90deg) translateX(-2px)}50%{opacity:1;transform:rotate(90deg) translateX(2px)}}
+@media(prefers-reduced-motion:reduce){.topology-live i,.topology-flow>i{animation:none!important}.topology-flow .node{transition:none}}
+</style></head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
@@ -2114,20 +2168,33 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
 <article class="skill reveal"><div class="skillnum">02</div><div><h3>IT Skills</h3><p>Practical computer, office technology, security-system, and end-user technical support.</p><div class="tags"><span class="tag">PC Setup & Troubleshooting</span><span class="tag">Hardware Diagnosis</span><span class="tag">Windows Support</span><span class="tag">Printer Setup & Support</span><span class="tag">CCTV Systems</span><span class="tag">NVR / DVR</span><span class="tag">IP Phone Setup</span><span class="tag">Biometric / Fingerprint Devices</span><span class="tag">Office IT Infrastructure</span><span class="tag">Wi-Fi & Mesh Router Setup</span><span class="tag">End-user Technical Support</span></div></div></article>
 </div></div></section>
 
-<section class="section topology" id="topology"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>Access network<br><em>to customer.</em></h2></div><div class="topology-panel reveal"><div class="topology-label mono">Typical ISP access topology</div><div class="topology-flow topology-flow-redesigned"><div class="node"><b>01</b><strong>Main Network Switch</strong><small>Distributes the network connection</small></div><i>→</i><div class="node"><b>02</b><strong>Fiber Line Terminal (OLT)</strong><small>Connects the ISP network to fiber lines</small></div><i>→</i><div class="node"><b>03</b><strong>Fiber Splitter</strong><small>Shares the fiber signal across users</small></div><i>→</i><div class="node"><b>04</b><strong>Customer Fiber Unit (ONU)</strong><small>Receives the fiber connection at the site</small></div><i>→</i><div class="node"><b>05</b><strong>Customer Devices</strong><small>Wi-Fi router · Computer · CCTV · IP phone</small></div></div><div class="workflow"><span class="mono">Troubleshooting workflow</span><p><b>Detect</b><em>→</em><b>Isolate</b><em>→</em><b>Verify</b><em>→</em><b>Restore</b><em>→</em><b>Monitor</b></p></div>
-<div class="it-overview" aria-label="IT infrastructure support overview">
-  <div class="it-overview-head"><span class="mono">IT infrastructure overview</span><p>Office systems and connected devices supported through day-to-day IT assistance.</p></div>
-  <div class="it-hub"><span class="it-hub-mark">IT</span><div><strong>Office IT &amp; Network Support</strong><small>Setup · Connectivity · Troubleshooting</small></div></div>
-  <div class="it-branches" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-  <div class="it-endpoints">
-    <div class="it-endpoint"><b>01</b><strong>PCs &amp; Windows</strong><small>Workstations · hardware</small></div>
-    <div class="it-endpoint"><b>02</b><strong>Printers</strong><small>Setup · user support</small></div>
-    <div class="it-endpoint"><b>03</b><strong>CCTV &amp; NVR</strong><small>Security systems · DVR</small></div>
-    <div class="it-endpoint"><b>04</b><strong>IP Telephony</strong><small>IP phone setup</small></div>
-    <div class="it-endpoint"><b>05</b><strong>Biometric &amp; Wi-Fi</strong><small>Access devices · mesh</small></div>
+<section class="section topology" id="topology"><div class="wrap">
+  <div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>ISP &amp; IT<br><em>infrastructure.</em></h2></div>
+  <div class="topology-panel reveal">
+    <div class="topology-label mono">ISP access network <span class="topology-live"><i></i> SIGNAL FLOW</span></div>
+    <div class="topology-flow topology-flow-redesigned">
+      <div class="node"><b>01</b><strong>Internet</strong><small>Upstream connection</small></div><i>→</i>
+      <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik · Routing</small></div><i>→</i>
+      <div class="node"><b>03</b><strong>Switch</strong><small>VLAN · L2 / L3</small></div><i>→</i>
+      <div class="node"><b>04</b><strong>OLT</strong><small>GPON / EPON</small></div><i>→</i>
+      <div class="node"><b>05</b><strong>Splitter</strong><small>Fiber distribution</small></div><i>→</i>
+      <div class="node"><b>06</b><strong>ONU / Router</strong><small>Customer connection</small></div>
+    </div>
+    <div class="topology-endpoints"><span>Wi-Fi</span><span>PC / LAN</span><span>CCTV</span><span>IP Phone</span></div>
+    <div class="workflow"><span class="mono">Network support cycle</span><p><b>Monitor</b><em>→</em><b>Diagnose</b><em>→</em><b>Resolve</b><em>→</em><b>Verify</b></p></div>
+    <div class="it-overview" aria-label="IT support systems">
+      <div class="it-overview-head"><span class="mono">IT support</span><p>Office systems connected through one support function.</p></div>
+      <div class="it-hub"><span class="it-hub-mark">IT</span><div><strong>IT &amp; Network Support</strong><small>Setup · Maintenance · Troubleshooting</small></div></div>
+      <div class="it-endpoints">
+        <div class="it-endpoint"><b>01</b><strong>Computers</strong><small>PC · Windows</small></div>
+        <div class="it-endpoint"><b>02</b><strong>Printers</strong><small>Setup · support</small></div>
+        <div class="it-endpoint"><b>03</b><strong>CCTV</strong><small>NVR · DVR</small></div>
+        <div class="it-endpoint"><b>04</b><strong>IP Phones</strong><small>IP telephony</small></div>
+        <div class="it-endpoint"><b>05</b><strong>Wi-Fi &amp; Access</strong><small>Mesh · biometric</small></div>
+      </div>
+    </div>
   </div>
-</div>
-</div></div></section>
+</div></section>
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">06 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg?v=2" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree · 2024</p></div></div><span class="mono">Academic background</span></div></div></section>
 <section class="contact" id="contact"><div class="wrap contactgrid"><span class="kicker">07 — Contact</span><div><h2>Good work<br>starts with <em>a hello.</em></h2><p>Interested in IT Support, NOC, Network Support, and ISP Operations roles. Let’s connect.</p><div class="actions"><a class="btn primary" href="mailto:farhanahmedturjoy@gmail.com">Email Farhan ↗</a><a class="btn" href="tel:+8801865121692">Call 01865121692 ↗</a><a class="btn" href="https://www.linkedin.com/in/farhanahmedcse/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/tr.turjoy.2025/" target="_blank" rel="noreferrer">Facebook ↗</a></div><a class="email" href="mailto:farhanahmedturjoy@gmail.com">farhanahmedturjoy@gmail.com</a></div></div></section>
 </main>
