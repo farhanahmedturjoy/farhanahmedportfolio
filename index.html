@@ -2156,6 +2156,11 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
 .topology-flow .node:nth-of-type(5){animation-delay:1.6s}
 .topology-flow .node:nth-of-type(7){animation-delay:2.4s}
 .topology-flow .node:nth-of-type(9){animation-delay:3.2s}
+.topology-flow .node:nth-of-type(11){animation-delay:4s}
+.topology-flow .node:nth-of-type(13){animation-delay:4.8s}
+.topology-flow .reference-flowline circle{fill:#d8ffe5;filter:drop-shadow(0 0 5px #83d5a4) drop-shadow(0 0 10px rgba(131,213,164,.55))}
+.topology-endpoints{align-items:center}
+.topology-endpoints .endpoint-caption{border:0!important;background:transparent!important;color:#a9cdb4!important;padding-left:0!important;font:9px "DM Mono",monospace!important;letter-spacing:.13em}
 @keyframes referenceNodePulse{0%,24%,100%{border-color:#53645c;box-shadow:0 0 0 rgba(131,213,164,0)}6%{border-color:#83d5a4;box-shadow:0 0 13px rgba(131,213,164,.2)}}
 .topology-flow>i{animation:none!important}
 .topology-flow .reference-flowline{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none}
@@ -2222,12 +2227,13 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
     <div class="topology-flow topology-flow-redesigned"><svg class="reference-flowline desktop" viewBox="0 0 1000 88" preserveAspectRatio="none" aria-hidden="true"><path d="M0 44H1000"/><circle r="4"><animateMotion path="M0 44H1000" dur="4s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M0 44H1000" dur="4s" begin="1.33s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M0 44H1000" dur="4s" begin="2.67s" repeatCount="indefinite"/></circle></svg><svg class="reference-flowline mobile" viewBox="0 0 36 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M18 0V1000"/><circle r="4"><animateMotion path="M18 0V1000" dur="4s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M18 0V1000" dur="4s" begin="1.33s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M18 0V1000" dur="4s" begin="2.67s" repeatCount="indefinite"/></circle></svg>
       <div class="node"><b>01</b><strong>Internet</strong><small>Upstream connection</small></div><i>→</i>
       <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik · Routing</small></div><i>→</i>
-      <div class="node"><b>03</b><strong>Switch</strong><small>VLAN · L2 / L3</small></div><i>→</i>
+      <div class="node"><b>03</b><strong>Core Switch</strong><small>VLAN · L2 / L3</small></div><i>→</i>
       <div class="node"><b>04</b><strong>OLT</strong><small>GPON / EPON</small></div><i>→</i>
-      <div class="node"><b>05</b><strong>Splitter</strong><small>Fiber distribution</small></div><i>→</i>
-      <div class="node"><b>06</b><strong>ONU / Router</strong><small>Customer connection</small></div>
+      <div class="node"><b>05</b><strong>Fiber Splitter</strong><small>Optical distribution</small></div><i>→</i>
+      <div class="node"><b>06</b><strong>ONU / ONT</strong><small>Fiber termination · Ethernet handoff</small></div><i>→</i>
+      <div class="node"><b>07</b><strong>Wi-Fi Router</strong><small>Customer LAN · Wireless gateway</small></div>
     </div>
-    <div class="topology-endpoints"><span>Wi-Fi</span><span>PC / LAN</span><span>CCTV</span><span>IP Phone</span></div>
+    <div class="topology-endpoints"><span class="endpoint-caption">CUSTOMER DEVICES</span><span>Wi-Fi</span><span>PC / LAN</span><span>CCTV</span><span>IP Phone</span></div>
     <div class="workflow"><span class="mono">Network support cycle</span><p><b>Monitor</b><em>→</em><b>Diagnose</b><em>→</em><b>Resolve</b><em>→</em><b>Verify</b></p></div>
     <div class="it-overview" aria-label="IT support systems">
       <div class="it-overview-head"><span class="mono">IT support</span><p>Office systems connected through one support function.</p></div>
