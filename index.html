@@ -2146,7 +2146,54 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
 }
 @keyframes topologyArrowMobile{0%,100%{opacity:.45;transform:rotate(90deg) translateX(-2px)}50%{opacity:1;transform:rotate(90deg) translateX(2px)}}
 @media(prefers-reduced-motion:reduce){.topology-live i,.topology-flow>i{animation:none!important}.topology-flow .node{transition:none}}
-</style></head>
+</style><style id="reference-network-motion-and-services">
+/* Reference-file network motion, recolored to the existing portfolio palette */
+.topology-flow{position:relative}
+.topology-flow .node,.topology-flow>i{z-index:1}
+.topology-flow .node{animation:referenceNodePulse 4s linear infinite}
+.topology-flow .node:nth-of-type(1){animation-delay:0s}
+.topology-flow .node:nth-of-type(3){animation-delay:.8s}
+.topology-flow .node:nth-of-type(5){animation-delay:1.6s}
+.topology-flow .node:nth-of-type(7){animation-delay:2.4s}
+.topology-flow .node:nth-of-type(9){animation-delay:3.2s}
+@keyframes referenceNodePulse{0%,24%,100%{border-color:#53645c;box-shadow:0 0 0 rgba(131,213,164,0)}6%{border-color:#83d5a4;box-shadow:0 0 13px rgba(131,213,164,.2)}}
+.topology-flow>i{animation:none!important}
+.topology-flow .reference-flowline{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none}
+.topology-flow .reference-flowline path{stroke:rgba(131,213,164,.3);stroke-width:2;stroke-dasharray:4 14;fill:none}
+.topology-flow .reference-flowline circle{fill:#a5f3fc;filter:drop-shadow(0 0 4px #83d5a4)}
+.reference-flowline.mobile{display:none}
+@media(max-width:780px){
+ .topology-flow .node{animation-duration:4s}
+ .topology-flow .reference-flowline.desktop{display:none}
+ .topology-flow .reference-flowline.mobile{display:block;left:0;top:0;width:100%;height:100%}
+}
+@media(prefers-reduced-motion:reduce){.topology-flow .node{animation:none!important}.topology-flow .reference-flowline{display:none!important}}
+
+/* Services list inspired by the supplied reference, using the live site's dark green palette */
+.portfolio-services{position:relative;margin-top:34px;padding:clamp(20px,3vw,34px);border:1px solid #46534f;border-radius:14px;background:linear-gradient(135deg,#202a28,#1b2224 70%,#202b2a);overflow:hidden}
+.portfolio-services-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
+.portfolio-services-head .kicker{margin:0;color:#a9d4b4}
+.portfolio-services-head h3{margin:5px 0 0;font-size:clamp(25px,4vw,42px);line-height:1;letter-spacing:-.06em;color:#fffdf7}
+.portfolio-services-head p{max-width:360px;margin:0;color:#c4d0c8;font-size:11px}
+.portfolio-service-list{max-width:900px;margin:auto}
+.portfolio-service{display:grid;grid-template-columns:clamp(52px,9vw,105px) 1fr 48px;align-items:center;gap:clamp(12px,3vw,28px);padding:19px 0;border-top:1px solid #4b5b53}
+.portfolio-service:last-child{border-bottom:1px solid #4b5b53}
+.portfolio-service-num{font-size:clamp(28px,5vw,54px);font-weight:700;line-height:.9;color:#9bc9a8;letter-spacing:-.07em}
+.portfolio-service h4{margin:0 0 5px;color:#fffdf7;font-size:clamp(14px,1.7vw,19px);font-weight:600}
+.portfolio-service p{margin:0;max-width:680px;color:#c4d0c8;font-size:12px;line-height:1.65}
+.portfolio-service-mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid #66816f;border-radius:9px;background:#293a31;color:#b8dfc1;font:11px "DM Mono",monospace}
+@media(max-width:780px){
+ .portfolio-services{margin-top:22px;padding:18px 14px;border-radius:11px}
+ .portfolio-services-head{display:block;margin-bottom:14px}
+ .portfolio-services-head p{margin-top:8px}
+ .portfolio-service{grid-template-columns:42px 1fr 34px;gap:10px;padding:15px 0}
+ .portfolio-service-num{font-size:28px}
+ .portfolio-service h4{font-size:14px}
+ .portfolio-service p{font-size:11px}
+ .portfolio-service-mark{width:32px;height:32px;font-size:9px}
+}
+</style>
+</head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
@@ -2172,7 +2219,7 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
   <div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>ISP &amp; IT<br><em>infrastructure.</em></h2></div>
   <div class="topology-panel reveal">
     <div class="topology-label mono">ISP access network <span class="topology-live"><i></i> SIGNAL FLOW</span></div>
-    <div class="topology-flow topology-flow-redesigned">
+    <div class="topology-flow topology-flow-redesigned"><svg class="reference-flowline desktop" viewBox="0 0 1000 88" preserveAspectRatio="none" aria-hidden="true"><path d="M0 44H1000"/><circle r="4"><animateMotion path="M0 44H1000" dur="4s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M0 44H1000" dur="4s" begin="1.33s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M0 44H1000" dur="4s" begin="2.67s" repeatCount="indefinite"/></circle></svg><svg class="reference-flowline mobile" viewBox="0 0 36 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M18 0V1000"/><circle r="4"><animateMotion path="M18 0V1000" dur="4s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M18 0V1000" dur="4s" begin="1.33s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M18 0V1000" dur="4s" begin="2.67s" repeatCount="indefinite"/></circle></svg>
       <div class="node"><b>01</b><strong>Internet</strong><small>Upstream connection</small></div><i>→</i>
       <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik · Routing</small></div><i>→</i>
       <div class="node"><b>03</b><strong>Switch</strong><small>VLAN · L2 / L3</small></div><i>→</i>
@@ -2194,6 +2241,16 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
       </div>
     </div>
   </div>
+  <section class="portfolio-services reveal" aria-labelledby="portfolioServicesTitle">
+    <div class="portfolio-services-head"><div><span class="kicker mono">Services / Technical support</span><h3 id="portfolioServicesTitle">What I support.</h3></div><p>Practical network and office-technology support across ISP operations, access infrastructure and end-user systems.</p></div>
+    <div class="portfolio-service-list">
+      <article class="portfolio-service"><b class="portfolio-service-num">01</b><div><h4>ISP Network Support</h4><p>Subscriber connectivity, PPPoE and broadband service delivery for retail customers and resellers.</p></div><span class="portfolio-service-mark">ISP</span></article>
+      <article class="portfolio-service"><b class="portfolio-service-num">02</b><div><h4>Network Monitoring</h4><p>PRTG, The Dude and POP monitoring, plus ONU uptime and optical signal checks.</p></div><span class="portfolio-service-mark">NOC</span></article>
+      <article class="portfolio-service"><b class="portfolio-service-num">03</b><div><h4>MikroTik &amp; Switching</h4><p>WinBox, VLAN, DHCP, L2/L3 and managed switches, with LAN/WAN configuration.</p></div><span class="portfolio-service-mark">LAN</span></article>
+      <article class="portfolio-service"><b class="portfolio-service-num">04</b><div><h4>Fiber &amp; OLT</h4><p>GPON/EPON, OLT/ONU, splitters and fiber uplinks for access-network reliability.</p></div><span class="portfolio-service-mark">FIBER</span></article>
+      <article class="portfolio-service"><b class="portfolio-service-num">05</b><div><h4>Office IT Support</h4><p>PCs, printers, CCTV and NVR, IP phones, biometric devices and mesh Wi-Fi setup.</p></div><span class="portfolio-service-mark">IT</span></article>
+    </div>
+  </section>
 </div></section>
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">06 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg?v=2" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree · 2024</p></div></div><span class="mono">Academic background</span></div></div></section>
 <section class="contact" id="contact"><div class="wrap contactgrid"><span class="kicker">07 — Contact</span><div><h2>Good work<br>starts with <em>a hello.</em></h2><p>Interested in IT Support, NOC, Network Support, and ISP Operations roles. Let’s connect.</p><div class="actions"><a class="btn primary" href="mailto:farhanahmedturjoy@gmail.com">Email Farhan ↗</a><a class="btn" href="tel:+8801865121692">Call 01865121692 ↗</a><a class="btn" href="https://www.linkedin.com/in/farhanahmedcse/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/tr.turjoy.2025/" target="_blank" rel="noreferrer">Facebook ↗</a></div><a class="email" href="mailto:farhanahmedturjoy@gmail.com">farhanahmedturjoy@gmail.com</a></div></div></section>
