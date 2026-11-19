@@ -2198,6 +2198,94 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
  .portfolio-service-mark{width:32px;height:32px;font-size:9px}
 }
 </style>
+<style id="topology-project-visual-refinement-20261119">
+/* Compact, evenly sized ISP topology nodes — no flex-shrunk final stages. */
+html body .topology-flow-redesigned{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  justify-content:initial!important;
+  gap:14px!important;
+  padding:8px 0 2px!important;
+}
+html body .topology-flow-redesigned .node{
+  position:relative!important;display:flex!important;flex-direction:column!important;
+  justify-content:center!important;min-width:0!important;min-height:126px!important;
+  width:auto!important;flex:none!important;padding:16px 15px!important;
+  border:1px solid #52645a!important;border-radius:12px!important;
+  background:linear-gradient(145deg,#29342f,#202725)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035)!important;
+}
+html body .topology-flow-redesigned .node:after{
+  content:"";position:absolute;right:12px;top:12px;width:6px;height:6px;
+  border-radius:50%;background:#86c99a;box-shadow:0 0 9px #86c99a;opacity:.65;
+}
+html body .topology-flow-redesigned .node b{
+  display:block!important;position:static!important;width:auto!important;height:auto!important;
+  margin:0 0 12px!important;padding:0!important;background:none!important;border:0!important;
+  color:#9bcfa8!important;font:12px "DM Mono",monospace!important;
+}
+html body .topology-flow-redesigned .node strong{
+  display:block!important;font-size:16px!important;line-height:1.25!important;
+  overflow-wrap:normal!important;word-break:normal!important;color:#fffdf7!important;
+}
+html body .topology-flow-redesigned .node small{
+  display:block!important;margin-top:7px!important;font-size:12px!important;
+  line-height:1.45!important;color:#c7d5cb!important;overflow-wrap:normal!important;
+}
+html body .topology-flow-redesigned .node:nth-last-child(1){grid-column:span 1}
+html body .topology-flow-redesigned .reference-flowline{display:none!important}
+html body .topology-endpoints{display:flex!important;align-items:center!important;flex-wrap:wrap!important;gap:8px!important;margin-top:14px!important}
+html body .topology-endpoints span:not(.endpoint-caption){border:1px solid #52645a!important;border-radius:999px!important;padding:6px 11px!important;background:#202b26!important;color:#dce9df!important;font-size:12px!important}
+html body .topology-endpoints .endpoint-caption{width:100%;padding:0!important;margin-bottom:1px!important;font-size:10px!important}
+
+/* Reference-inspired project cards: compact editorial header + custom mini illustrations. */
+html body .projects{padding-top:66px!important;padding-bottom:68px!important}
+html body .project-intro{margin-bottom:22px!important}
+html body .project-grid-illustrated{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;align-items:stretch}
+html body .project-card-illustrated{
+  min-height:0!important;height:100%!important;padding:17px!important;border-radius:16px!important;
+  background:linear-gradient(155deg,#2b3532 0%,#202725 100%)!important;
+  border:1px solid #52645a!important;overflow:hidden!important;
+}
+html body .project-card-illustrated .project-top{font-size:10px!important;letter-spacing:.07em!important}
+html body .project-card-illustrated .project-mark{width:29px!important;height:29px!important;border-radius:8px!important}
+html body .project-card-main{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:10px;align-items:center;flex:1;margin:13px 0}
+html body .project-card-illustrated h3{margin:0 0 8px!important;font-size:18px!important;line-height:1.16!important;letter-spacing:-.04em!important}
+html body .project-card-illustrated p{font-size:12px!important;line-height:1.6!important;margin:0!important;color:#cbd6cf!important}
+html body .project-visual{
+  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  min-width:0;height:112px;padding:8px;border:1px solid #52645a;border-radius:11px;
+  background:radial-gradient(ellipse at 50% 80%,rgba(111,174,131,.15),transparent 70%),#1a211f;
+  overflow:hidden;
+}
+html body .project-visual .visual-label{font:8px "DM Mono",monospace;letter-spacing:.07em;color:#a9cdb3;white-space:nowrap}
+html body .project-visual svg{width:100%;height:78px;overflow:visible;fill:none;stroke:#91cba1;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html body .project-visual svg rect{fill:rgba(111,174,131,.08);stroke:#6f9d7b}
+html body .project-visual svg .visual-flow{stroke:#b9e9c3;stroke-dasharray:4 4;animation:projectSignal 1.8s linear infinite}
+html body .traffic-visual svg circle:nth-of-type(1){fill:#83c996;stroke:#83c996;filter:drop-shadow(0 0 4px #83c996)}
+html body .traffic-visual svg circle:nth-of-type(2){fill:#caa96b;stroke:#caa96b}
+html body .traffic-visual svg circle:nth-of-type(3){fill:#52645a;stroke:#52645a}
+html body .chatbot-visual svg rect:first-child{fill:rgba(111,174,131,.1)}
+html body .project-card-illustrated .tags{gap:5px!important;padding-top:8px!important}
+html body .project-card-illustrated .tag{font-size:10px!important;padding:4px 7px!important}
+@keyframes projectSignal{to{stroke-dashoffset:-16}}
+@media(max-width:1000px){
+ html body .topology-flow-redesigned{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ html body .project-grid-illustrated{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:650px){
+ html body .topology-flow-redesigned{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ html body .topology-flow-redesigned .node{min-height:112px!important;padding:13px!important}
+ html body .topology-flow-redesigned .node strong{font-size:14px!important}
+ html body .topology-flow-redesigned .node small{font-size:11px!important}
+ html body .project-grid-illustrated{grid-template-columns:1fr!important;gap:10px!important}
+ html body .project-card-illustrated{padding:16px!important}
+ html body .project-card-main{grid-template-columns:minmax(0,1fr) 104px!important}
+ html body .project-card-illustrated h3{font-size:17px!important}
+}
+@media(prefers-reduced-motion:reduce){html body .project-visual svg .visual-flow{animation:none!important}}
+</style>
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -2210,10 +2298,25 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
 <section class="section" id="profile"><div class="wrap about reveal"><div class="label">01 — Profile<br><br>Working approach</div><div><p class="aboutcopy">Hands-on experience supporting broadband services, monitoring access networks, troubleshooting connectivity, and coordinating service restoration. <span>Focused on uptime, clear communication, and dependable customer service.</span></p><div class="stats"><div class="stat"><b>ISP / IT</b><small>Operations experience</small></div><div class="stat"><b>L1–L2</b><small>Technical support</small></div><div class="stat"><b>Network-first</b><small>Service mindset</small></div></div></div></div></section>
 <section class="section work" id="experience"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">02 — Experience</span><h2>Keeping people<br><em>connected.</em></h2></div>
 <div class="workrow reveal"><div class="workmeta"><b>Nov 2024 — Present</b>Noakhali, Bangladesh</div><div class="workbody"><div><div class="company-mark"><img src="./assets/noakhali-supernet-logo.svg" alt="Noakhali SuperNet logo" onerror="this.style.display='none'"><span>Noakhali Supernet Broadband</span></div><h3>IT &amp; Network Support Engineer</h3><h4 class="role-tech">ISP Operations · Customer Support · Service Coordination</h4><p>Oversee ISP and IT operations across two branch offices, ensuring smooth network performance, effective troubleshooting, and day-to-day technical coordination. Monitor network services, identify faults, and work closely with NOC and field teams to resolve issues efficiently. Also coordinate office IT support, covering computers, CCTV, biometric systems, switches, routers, and related infrastructure. Provide technical assistance to office users and resellers, with site visits and hands-on support for installations, maintenance, and upgrades when required.</p></div><div class="worklist">01 / Customer issue handling<br>02 / Daily branch operations<br>03 / Reseller & site coordination<br>04 / Service reports & follow-up</div></div></div></div></section>
-<section class="section projects" id="projects"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">03 — Academic Projects</span><h2>Ideas into<br><em>working systems.</em></h2></div><div class="project-intro reveal">Selected academic projects completed during my Computer Science & Engineering studies at Dhaka International University.</div><div class="project-grid">
-<article class="project-card reveal"><div class="project-top"><span class="mono">01 / COMPILER DEVELOPMENT</span><span class="project-mark">01</span></div><h3>Developing C Compiler from Scratch</h3><p>Created a basic C compiler using C and Python, with a focus on translating C code into machine instructions.</p><div class="tags"><span class="tag">C</span><span class="tag">Python</span><span class="tag">Compiler Design</span><span class="tag">Machine Instructions</span></div></article>
-<article class="project-card reveal"><div class="project-top"><span class="mono">02 / AI &amp; AUTOMATION</span><span class="project-mark">02</span></div><h3>Smart Traffic System</h3><p>Designed an AI-based traffic control concept using sensors to help monitor traffic conditions and reduce road congestion.</p><div class="tags"><span class="tag">Artificial Intelligence</span><span class="tag">Sensors</span><span class="tag">Traffic Management</span></div></article>
-<article class="project-card reveal"><div class="project-top"><span class="mono">03 / AI &amp; NLP</span><span class="project-mark">03</span></div><h3>Campus Companion — AI-Powered Chatbot</h3><p>Developed a chatbot to assist students with campus-related queries, using AI and Natural Language Processing to understand questions and automate responses.</p><div class="tags"><span class="tag">AI</span><span class="tag">Natural Language Processing</span><span class="tag">Chatbot</span><span class="tag">Student Support</span></div></article>
+<section class="section projects" id="projects"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">03 — Academic Projects</span><h2>Ideas into<br><em>working systems.</em></h2></div><div class="project-intro reveal">Selected academic projects completed during my Computer Science & Engineering studies at Dhaka International University.</div><div class="project-grid project-grid-illustrated">
+<article class="project-card project-card-illustrated reveal">
+  <div class="project-top"><span class="mono">COMPILER DEVELOPMENT</span><span class="project-mark">01</span></div>
+  <div class="project-card-main"><div><h3>Developing C Compiler from Scratch</h3><p>Created a basic C compiler using C and Python, focused on translating C code into machine instructions.</p></div>
+  <div class="project-visual compiler-visual" aria-hidden="true"><span class="visual-label">SOURCE → OUTPUT</span><svg viewBox="0 0 220 112"><rect x="8" y="12" width="78" height="86" rx="9"/><path d="M22 34h28M22 47h46M22 60h34M22 73h22"/><path class="visual-flow" d="M96 55h25m-8-8 8 8-8 8"/><rect x="132" y="22" width="78" height="66" rx="8"/><path d="M145 42h52M145 54h52M145 66h35"/></svg></div></div>
+  <div class="tags"><span class="tag">C</span><span class="tag">Python</span><span class="tag">Compiler Design</span></div>
+</article>
+<article class="project-card project-card-illustrated reveal">
+  <div class="project-top"><span class="mono">AI &amp; AUTOMATION</span><span class="project-mark">02</span></div>
+  <div class="project-card-main"><div><h3>Smart Traffic System</h3><p>Designed an AI-based traffic control concept using sensors to monitor traffic conditions and help reduce road congestion.</p></div>
+  <div class="project-visual traffic-visual" aria-hidden="true"><span class="visual-label">SMART SIGNAL / LIVE</span><svg viewBox="0 0 220 112"><path d="M12 86h196M28 86V22m164 64V22M28 43h164M28 65h164"/><rect x="91" y="10" width="38" height="84" rx="10"/><circle cx="110" cy="29" r="7"/><circle cx="110" cy="51" r="7"/><circle cx="110" cy="73" r="7"/><path d="M44 96h34m64 0h34"/></svg></div></div>
+  <div class="tags"><span class="tag">Artificial Intelligence</span><span class="tag">Sensors</span><span class="tag">Traffic Management</span></div>
+</article>
+<article class="project-card project-card-illustrated reveal">
+  <div class="project-top"><span class="mono">AI &amp; NATURAL LANGUAGE</span><span class="project-mark">03</span></div>
+  <div class="project-card-main"><div><h3>Campus Companion — AI-Powered Chatbot</h3><p>Developed a student-support chatbot using AI and Natural Language Processing to understand campus queries and automate responses.</p></div>
+  <div class="project-visual chatbot-visual" aria-hidden="true"><span class="visual-label">CAMPUS ASSISTANT</span><svg viewBox="0 0 220 112"><rect x="16" y="15" width="132" height="48" rx="12"/><path d="M34 34h76M34 46h53"/><path d="M86 73h105a10 10 0 0 1 10 10v12a10 10 0 0 1-10 10h-73l-18 0 7-15"/><circle cx="110" cy="88" r="2"/><circle cx="122" cy="88" r="2"/><circle cx="134" cy="88" r="2"/></svg></div></div>
+  <div class="tags"><span class="tag">AI</span><span class="tag">Natural Language Processing</span><span class="tag">Chatbot</span></div>
+</article>
 </div></div></section>
 <section class="section" id="skills"><div class="wrap"><div class="sectionhead reveal"><span class="kicker">04 — Capabilities</span><h2>Technical fluency.<br><em>Practical impact.</em></h2></div><div class="skillgrid">
 <article class="skill reveal"><div class="skillnum">01</div><div><h3>ISP Skills</h3><p>Broadband access, routing, subscriber connectivity, network monitoring, and ISP infrastructure support.</p><div class="tags"><span class="tag">MikroTik / WinBox</span><span class="tag">PPPoE</span><span class="tag">LAN / WAN</span><span class="tag">VLAN</span><span class="tag">L2 / L3 Switching</span><span class="tag">Managed Switches</span><span class="tag">DHCP</span><span class="tag">GPON / EPON</span><span class="tag">OLT / ONU</span><span class="tag">Optical Signal / dBm</span><span class="tag">ONU Uptime</span><span class="tag">Fiber Uplink & Splitter</span><span class="tag">PRTG</span><span class="tag">The Dude</span><span class="tag">Network Fault Diagnosis</span><span class="tag">POP Monitoring</span></div></div></article>
@@ -2224,13 +2327,13 @@ section[id]{scroll-snap-align:none!important;scroll-margin-top:82px!important}
   <div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>ISP &amp; IT<br><em>infrastructure.</em></h2></div>
   <div class="topology-panel reveal">
     <div class="topology-label mono">ISP access network <span class="topology-live"><i></i> SIGNAL FLOW</span></div>
-    <div class="topology-flow topology-flow-redesigned"><svg class="reference-flowline desktop" viewBox="0 0 1000 88" preserveAspectRatio="none" aria-hidden="true"><path d="M0 44H1000"/><circle r="4"><animateMotion path="M0 44H1000" dur="4s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M0 44H1000" dur="4s" begin="1.33s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M0 44H1000" dur="4s" begin="2.67s" repeatCount="indefinite"/></circle></svg><svg class="reference-flowline mobile" viewBox="0 0 36 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M18 0V1000"/><circle r="4"><animateMotion path="M18 0V1000" dur="4s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M18 0V1000" dur="4s" begin="1.33s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M18 0V1000" dur="4s" begin="2.67s" repeatCount="indefinite"/></circle></svg>
-      <div class="node"><b>01</b><strong>Internet</strong><small>Upstream connection</small></div><i>→</i>
-      <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik · Routing</small></div><i>→</i>
-      <div class="node"><b>03</b><strong>Core Switch</strong><small>VLAN · L2 / L3</small></div><i>→</i>
-      <div class="node"><b>04</b><strong>OLT</strong><small>GPON / EPON</small></div><i>→</i>
-      <div class="node"><b>05</b><strong>Fiber Splitter</strong><small>Optical distribution</small></div><i>→</i>
-      <div class="node"><b>06</b><strong>ONU / ONT</strong><small>Fiber termination · Ethernet handoff</small></div><i>→</i>
+    <div class="topology-flow topology-flow-redesigned">
+      <div class="node"><b>01</b><strong>Internet</strong><small>Upstream connection</small></div>
+      <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik · Routing</small></div>
+      <div class="node"><b>03</b><strong>Core Switch</strong><small>VLAN · L2 / L3</small></div>
+      <div class="node"><b>04</b><strong>OLT</strong><small>GPON / EPON</small></div>
+      <div class="node"><b>05</b><strong>Fiber Splitter</strong><small>Optical distribution</small></div>
+      <div class="node"><b>06</b><strong>ONU / ONT</strong><small>Fiber termination · Ethernet handoff</small></div>
       <div class="node"><b>07</b><strong>Wi-Fi Router</strong><small>Customer LAN · Wireless gateway</small></div>
     </div>
     <div class="topology-endpoints"><span class="endpoint-caption">CUSTOMER DEVICES</span><span>Wi-Fi</span><span>PC / LAN</span><span>CCTV</span><span>IP Phone</span></div>
