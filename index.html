@@ -2286,6 +2286,65 @@ html body .project-card-illustrated .tag{font-size:10px!important;padding:4px 7p
 }
 @media(prefers-reduced-motion:reduce){html body .project-visual svg .visual-flow{animation:none!important}}
 </style>
+
+<style id="compact-connected-topology-projects-20261119">
+/* Compact, visibly connected access-network flow. */
+html body .topology-flow-redesigned{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  flex-wrap:nowrap!important;gap:5px!important;padding:4px 0!important;
+}
+html body .topology-flow-redesigned .node{
+  flex:1 1 0!important;min-width:0!important;width:auto!important;min-height:84px!important;
+  padding:10px 8px!important;border-radius:9px!important;
+  background:linear-gradient(145deg,#293a33,#202b27)!important;
+  border:1px solid #607b6d!important;box-shadow:0 5px 14px #0002!important;
+}
+html body .topology-flow-redesigned .node b{font-size:9px!important;margin:0 0 6px!important}
+html body .topology-flow-redesigned .node strong{font-size:clamp(10px,.95vw,12px)!important;line-height:1.2!important}
+html body .topology-flow-redesigned .node small{font-size:9px!important;line-height:1.3!important;margin-top:4px!important}
+html body .topology-flow-redesigned>i{
+  display:grid!important;place-items:center!important;flex:0 0 13px!important;
+  width:13px!important;height:auto!important;border:0!important;border-radius:0!important;
+  background:none!important;color:#a8dfb8!important;font:700 15px/1 "DM Mono",monospace!important;
+  text-shadow:0 0 8px #86c99a88!important;animation:topologyArrow 1.8s ease-in-out infinite!important;
+}
+html body .topology-flow-redesigned>i:nth-of-type(2){animation-delay:.15s!important}
+html body .topology-flow-redesigned>i:nth-of-type(3){animation-delay:.3s!important}
+html body .topology-flow-redesigned>i:nth-of-type(4){animation-delay:.45s!important}
+html body .topology-flow-redesigned>i:nth-of-type(5){animation-delay:.6s!important}
+html body .topology-flow-redesigned>i:nth-of-type(6){animation-delay:.75s!important}
+html body .topology-flow-redesigned .node:after{width:5px!important;height:5px!important;right:7px!important;top:7px!important}
+html body .project-card-illustrated{padding:12px!important;border-radius:12px!important}
+html body .project-card-main{grid-template-columns:minmax(0,1fr) 88px!important;gap:8px!important;margin:8px 0!important}
+html body .project-card-illustrated h3{font-size:15px!important;line-height:1.2!important;margin-bottom:5px!important}
+html body .project-card-illustrated p{font-size:11px!important;line-height:1.45!important}
+html body .project-visual{height:82px!important;padding:6px!important;border-radius:8px!important}
+html body .project-visual .visual-label{font-size:7px!important}
+html body .project-visual svg{height:56px!important}
+html body .project-card-illustrated .project-top{font-size:9px!important}
+html body .project-card-illustrated .project-mark{width:24px!important;height:24px!important}
+html body .project-card-illustrated .tags{gap:4px!important;padding-top:5px!important}
+html body .project-card-illustrated .tag{font-size:8px!important;padding:3px 5px!important}
+@media(max-width:1050px){
+ html body .topology-flow-redesigned{flex-wrap:wrap!important;justify-content:center!important;gap:7px!important}
+ html body .topology-flow-redesigned .node{flex:1 1 calc(25% - 18px)!important;min-width:105px!important}
+ html body .topology-flow-redesigned>i{flex:0 0 12px!important}
+}
+@media(max-width:650px){
+ html body .topology-flow-redesigned{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:4px!important}
+ html body .topology-flow-redesigned .node{width:100%!important;min-height:58px!important;flex:none!important;padding:8px 10px 8px 42px!important}
+ html body .topology-flow-redesigned .node b{position:absolute!important;left:10px!important;top:50%!important;transform:translateY(-50%)!important;margin:0!important}
+ html body .topology-flow-redesigned .node strong{font-size:12px!important}
+ html body .topology-flow-redesigned .node small{font-size:10px!important}
+ html body .topology-flow-redesigned>i{height:10px!important;transform:rotate(90deg)!important;animation:none!important}
+ html body .project-grid-illustrated{grid-template-columns:1fr!important}
+ html body .project-card-main{grid-template-columns:minmax(0,1fr) 82px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html body .topology-flow-redesigned>i{animation:none!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -2327,14 +2386,14 @@ html body .project-card-illustrated .tag{font-size:10px!important;padding:4px 7p
   <div class="sectionhead reveal"><span class="kicker">05 — Network flow</span><h2>ISP &amp; IT<br><em>infrastructure.</em></h2></div>
   <div class="topology-panel reveal">
     <div class="topology-label mono">ISP access network <span class="topology-live"><i></i> SIGNAL FLOW</span></div>
-    <div class="topology-flow topology-flow-redesigned">
-      <div class="node"><b>01</b><strong>Internet</strong><small>Upstream connection</small></div>
-      <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik · Routing</small></div>
-      <div class="node"><b>03</b><strong>Core Switch</strong><small>VLAN · L2 / L3</small></div>
-      <div class="node"><b>04</b><strong>OLT</strong><small>GPON / EPON</small></div>
-      <div class="node"><b>05</b><strong>Fiber Splitter</strong><small>Optical distribution</small></div>
-      <div class="node"><b>06</b><strong>ONU / ONT</strong><small>Fiber termination · Ethernet handoff</small></div>
-      <div class="node"><b>07</b><strong>Wi-Fi Router</strong><small>Customer LAN · Wireless gateway</small></div>
+    <div class="topology-flow topology-flow-redesigned" aria-label="Internet connects to core router, core switch, OLT, fiber splitter, ONU, and customer Wi-Fi router">
+      <div class="node"><b>01</b><strong>Internet</strong><small>Upstream</small></div><i aria-hidden="true">→</i>
+      <div class="node"><b>02</b><strong>Core Router</strong><small>MikroTik</small></div><i aria-hidden="true">→</i>
+      <div class="node"><b>03</b><strong>Core Switch</strong><small>VLAN · L2/L3</small></div><i aria-hidden="true">→</i>
+      <div class="node"><b>04</b><strong>OLT</strong><small>GPON / EPON</small></div><i aria-hidden="true">→</i>
+      <div class="node"><b>05</b><strong>Fiber Splitter</strong><small>Optical split</small></div><i aria-hidden="true">→</i>
+      <div class="node"><b>06</b><strong>ONU / ONT</strong><small>Fiber to Ethernet</small></div><i aria-hidden="true">→</i>
+      <div class="node"><b>07</b><strong>Wi-Fi Router</strong><small>Customer gateway</small></div>
     </div>
     <div class="topology-endpoints"><span class="endpoint-caption">CUSTOMER DEVICES</span><span>Wi-Fi</span><span>PC / LAN</span><span>CCTV</span><span>IP Phone</span></div>
     <div class="workflow"><span class="mono">Network support cycle</span><p><b>Monitor</b><em>→</em><b>Diagnose</b><em>→</em><b>Resolve</b><em>→</em><b>Verify</b></p></div>
@@ -2353,7 +2412,7 @@ html body .project-card-illustrated .tag{font-size:10px!important;padding:4px 7p
   <section class="portfolio-services reveal" aria-labelledby="portfolioServicesTitle">
     <div class="portfolio-services-head"><div><span class="kicker mono">Services / Technical support</span><h3 id="portfolioServicesTitle">What I support.</h3></div><p>Practical network and office-technology support across ISP operations, access infrastructure and end-user systems.</p></div>
     <div class="portfolio-service-list">
-      <article class="portfolio-service"><b class="portfolio-service-num">01</b><div><h4>ISP Network Support</h4><p>Subscriber connectivity, PPPoE and broadband service delivery for retail customers and resellers.</p></div><span class="portfolio-service-mark">ISP</span></article>
+      <article class="portfolio-service"><b class="portfolio-service-num">01</b><div><h4>ISP Network Support</h4><p>Subscriber connectivity, PPPoE and broadband service delivery for retail customers and resellers.</p></div><span class="portfolio-service-mark">WAN</span></article>
       <article class="portfolio-service"><b class="portfolio-service-num">02</b><div><h4>Network Monitoring</h4><p>PRTG, The Dude and POP monitoring, plus ONU uptime and optical signal checks.</p></div><span class="portfolio-service-mark">NOC</span></article>
       <article class="portfolio-service"><b class="portfolio-service-num">03</b><div><h4>MikroTik &amp; Switching</h4><p>WinBox, VLAN, DHCP, L2/L3 and managed switches, with LAN/WAN configuration.</p></div><span class="portfolio-service-mark">LAN</span></article>
       <article class="portfolio-service"><b class="portfolio-service-num">04</b><div><h4>Fiber &amp; OLT</h4><p>GPON/EPON, OLT/ONU, splitters and fiber uplinks for access-network reliability.</p></div><span class="portfolio-service-mark">FIBER</span></article>
