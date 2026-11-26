@@ -2715,9 +2715,23 @@ html body .topology .workflow p b{
 }
 @media(prefers-reduced-motion:reduce){.isp-connector:after{display:none}}
 </style>
+
+<style id="minimal-services-section-20261126">
+.services{padding-top:65px;padding-bottom:72px}
+.services-intro{max-width:610px;margin:-8px 0 28px;color:var(--muted);font-size:13px;line-height:1.8}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 26px;border-top:1px solid var(--line)}
+.service-item{position:relative;padding:23px 4px 22px 0;border-bottom:1px solid var(--line);min-width:0}
+.service-no{position:absolute;right:2px;top:24px;font:10px "DM Mono",monospace;color:var(--muted)}
+.service-icon{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:#d99b80;margin-bottom:13px}
+.service-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.service-item h3{font-size:15px;letter-spacing:-.025em;margin:0 0 7px;font-weight:600}
+.service-item p{font-size:11px;line-height:1.75;color:var(--muted);margin:0;max-width:290px}
+@media(max-width:800px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}}
+@media(max-width:560px){.services{padding-top:50px;padding-bottom:55px}.services-intro{font-size:12px;margin-bottom:20px}.services-grid{grid-template-columns:1fr;gap:0}.service-item{display:grid;grid-template-columns:38px minmax(0,1fr);column-gap:12px;padding:17px 24px 17px 0}.service-icon{grid-column:1;grid-row:1/3;margin:1px 0 0;width:34px;height:34px}.service-no{top:19px}.service-item h3{font-size:13px;margin:0 0 5px}.service-item p{font-size:10px;line-height:1.65}}
+</style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
+<header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#services">Services</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
 <main id="home">
 <section class="hero"><div class="wrap"><div class="topline"><span class="kicker">IT/Networks</span><span class="small">NOAKHALI, BANGLADESH / 01</span></div>
 <div class="hero-grid"><h1>Farhan<br><em>Ahmed.</em></h1><div class="portrait"><img src="assets/Farhan%20Ahmed.jfif?v=20261109-3" alt="Farhan Ahmed profile photo" loading="eager" decoding="async"><span class="portrait-chip portrait-chip-it">IT</span><span class="portrait-chip portrait-chip-net">NETWORKS</span></div></div>
@@ -2786,6 +2800,18 @@ html body .topology .workflow p b{
       <div class="it-capability"><span class="infra-icon"><svg viewBox="0 0 32 32"><path d="M4 13a17 17 0 0 1 24 0M8 17a11 11 0 0 1 16 0m-12 4a5 5 0 0 1 8 0"/><circle cx="16" cy="25" r="1.5"/><path d="M5 5h22v22H5z" opacity=".25"/></svg></span><div><strong>Wi-Fi &amp; access devices</strong><small>Mesh routers · biometric devices</small></div></div>
     </div>
     <div class="infra-foot"><span>USER SUPPORT</span><p>Install <i>→</i> Maintain <i>→</i> Resolve <i>→</i> Verify</p></div>
+  </div>
+</div></section>
+<section class="section services" id="services"><div class="wrap">
+  <div class="sectionhead reveal"><span class="kicker">06 — SERVICES</span><h2>Practical support.<br><em>Reliable connections.</em></h2></div>
+  <p class="services-intro reveal">Technical support across ISP networks and everyday IT infrastructure — from setup and monitoring to troubleshooting and service restoration.</p>
+  <div class="services-grid">
+    <article class="service-item reveal"><span class="service-no">01</span><span class="service-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c4 4 5 7 5 11s-1 7-5 11c-4-4-5-7-5-11s1-7 5-11Z"/></svg></span><h3>ISP Network Operations</h3><p>Broadband connectivity, PPPoE, MikroTik configuration, LAN/WAN and subscriber support.</p></article>
+    <article class="service-item reveal"><span class="service-no">02</span><span class="service-icon"><svg viewBox="0 0 32 32"><rect x="7" y="3" width="18" height="26" rx="3"/><path d="M11 9h10v4H11zm0 8h10v3H11zm1 7h2m4 0h2"/></svg></span><h3>Fiber &amp; OLT Support</h3><p>GPON/EPON checks, OLT status, VLAN and PON monitoring, optical signal and ONU diagnostics.</p></article>
+    <article class="service-item reveal"><span class="service-no">03</span><span class="service-icon"><svg viewBox="0 0 32 32"><rect x="3" y="10" width="26" height="14" rx="3"/><path d="M8 15h2m4 0h2m4 0h2m4 0h1M8 20h2m4 0h2m4 0h2m4 0h1"/></svg></span><h3>Network Monitoring</h3><p>Performance checks, fault identification, uptime monitoring and coordination for issue resolution.</p></article>
+    <article class="service-item reveal"><span class="service-no">04</span><span class="service-icon"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="17" rx="2"/><path d="M12 27h8m-4-6v6M9 27h14"/></svg></span><h3>IT &amp; End-user Support</h3><p>Computer and hardware setup, Windows and printer support, device troubleshooting and user assistance.</p></article>
+    <article class="service-item reveal"><span class="service-no">05</span><span class="service-icon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="18" rx="3"/><circle cx="16" cy="17" r="5"/><path d="M9 8l2-4h10l2 4"/></svg></span><h3>CCTV &amp; IP Telephony</h3><p>Camera and NVR/DVR connectivity, IP phone installation and basic network integration.</p></article>
+    <article class="service-item reveal"><span class="service-no">06</span><span class="service-icon"><svg viewBox="0 0 32 32"><path d="M5 7h22v18H5zM9 12h14M9 17h9M9 22h6"/></svg></span><h3>Technical Coordination</h3><p>Client support, ticket follow-up, service reporting, documentation and field-team coordination.</p></article>
   </div>
 </div></section>
 <section class="section edu" id="education"><div class="wrap edugrid reveal"><div class="label">06 — Education<br><br>Foundation</div><div class="eduitem"><div class="education-brand"><img src="./assets/diu-logo.svg?v=2" alt="Dhaka International University logo"><div><h3>Computer Science & Engineering</h3><p>Dhaka International University · Bachelor’s degree · 2024</p></div></div><span class="mono">Academic background</span></div></div></section>
