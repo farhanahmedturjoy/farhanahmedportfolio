@@ -2729,6 +2729,76 @@ html body .topology .workflow p b{
 @media(max-width:800px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}}
 @media(max-width:560px){.services{padding-top:50px;padding-bottom:55px}.services-intro{font-size:12px;margin-bottom:20px}.services-grid{grid-template-columns:1fr;gap:0}.service-item{display:grid;grid-template-columns:38px minmax(0,1fr);column-gap:12px;padding:17px 24px 17px 0}.service-icon{grid-column:1;grid-row:1/3;margin:1px 0 0;width:34px;height:34px}.service-no{top:19px}.service-item h3{font-size:13px;margin:0 0 5px}.service-item p{font-size:10px;line-height:1.65}}
 </style>
+
+<style id="network-flow-visual-refresh-20261126">
+/* Open, editorial network diagram: no card grid, clear signal path */
+.topology{padding-top:54px;padding-bottom:88px}
+.network-visual{position:relative;padding:27px 0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.network-caption,.network-process,.endpoint-label,.office-caption,.office-footer>span{font:10px "DM Mono",monospace;letter-spacing:.13em;text-transform:uppercase;color:#c1c8c1}
+.network-caption{display:flex;justify-content:space-between;gap:16px;margin-bottom:34px}
+.network-caption span:first-child{color:var(--red)}
+.network-route{display:flex;align-items:center;justify-content:space-between;gap:7px}
+.route-node{position:relative;display:flex;flex:0 1 112px;min-width:0;flex-direction:column;align-items:center;text-align:center;gap:8px}
+.route-icon{width:52px;height:52px;display:grid;place-items:center;color:#f3a184;border:1px solid #646c67;border-radius:50%;background:rgba(255,255,255,.025);transition:color .25s,border-color .25s,transform .25s}
+.route-icon svg,.office-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.route-node:hover .route-icon{color:#fff;border-color:var(--red);transform:translateY(-3px)}
+.route-node strong{font-size:12px;line-height:1.2;color:var(--ink);white-space:nowrap}
+.route-node small{font:9px "DM Mono",monospace;color:var(--muted);line-height:1.4}
+.route-link{position:relative;flex:1 1 24px;min-width:12px;height:1px;background:#65716a;margin-top:-32px;overflow:visible}
+.route-link:after{content:"";position:absolute;top:-2px;left:-3px;width:5px;height:5px;border-radius:50%;background:#f3a184;box-shadow:0 0 9px #f3a184;animation:signalTravel 2.8s linear infinite}
+.route-link:nth-of-type(4n):after{animation-delay:.7s}
+.route-link:nth-of-type(4n + 2):after{animation-delay:1.4s}
+@keyframes signalTravel{0%{left:-3px;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:calc(100% - 2px);opacity:0}}
+.network-endpoints{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+.endpoint-label{margin-right:9px;color:var(--muted)}
+.network-endpoints>span:not(.endpoint-label){font:10px "DM Mono",monospace;color:#e4e6df;padding:5px 10px;border:1px solid #515a54;border-radius:30px}
+.network-process,.office-footer{display:flex;align-items:center;gap:25px;margin-top:24px;padding-top:17px;border-top:1px solid #505954}
+.network-process p,.office-footer p{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0;font:11px "DM Mono",monospace;color:#f0eee6}
+.network-process i,.office-footer i{font-style:normal;color:var(--red)}
+.office-visual{padding:42px 0 10px}
+.office-heading{display:grid;grid-template-columns:36px minmax(220px,1fr) minmax(180px,.7fr);align-items:end;gap:18px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.office-index{font:11px "DM Mono",monospace;color:var(--red);align-self:start;padding-top:4px}
+.office-caption{color:var(--red)}
+.office-heading h3{font-size:clamp(22px,3vw,34px);letter-spacing:-.055em;line-height:1.1;margin:8px 0 0}
+.office-heading>p{font-size:12px;color:var(--muted);margin:0;max-width:260px}
+.office-services{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;padding:25px 0 4px}
+.office-service{display:flex;align-items:flex-start;gap:11px;min-width:0}
+.office-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;color:#f3a184}
+.office-icon svg{width:23px;height:23px}
+.office-service strong{display:block;font-size:12px;line-height:1.35;color:var(--ink)}
+.office-service small{display:block;font-size:10px;line-height:1.5;color:var(--muted);margin-top:5px}
+.office-footer{margin-top:22px}
+@media(max-width:900px){
+ .network-route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px 12px}
+ .route-link{display:none}
+ .route-node:after{content:"";position:absolute;top:25px;left:calc(50% + 32px);width:calc(100% - 52px);height:1px;background:#65716a}
+ .route-node:nth-child(7):after{display:none}
+ .office-services{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px}
+}
+@media(max-width:560px){
+ .topology{padding-top:36px;padding-bottom:62px}
+ .network-visual{padding-top:21px}
+ .network-caption{font-size:9px;margin-bottom:25px}
+ .network-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+ .route-node{flex-basis:auto}
+ .route-icon{width:46px;height:46px}
+ .route-node strong{font-size:12px}
+ .route-node:after{display:none}
+ .network-endpoints{justify-content:flex-start;gap:8px;margin-top:24px}
+ .endpoint-label{width:100%;margin:0 0 3px}
+ .network-process,.office-footer{align-items:flex-start;flex-direction:column;gap:10px}
+ .office-visual{padding-top:34px}
+ .office-heading{grid-template-columns:28px 1fr;gap:12px}
+ .office-heading>p{grid-column:2;margin-top:0}
+ .office-services{grid-template-columns:1fr 1fr;gap:21px 13px}
+ .office-service{gap:7px}
+ .office-icon{width:30px;height:30px;flex-basis:30px}
+ .office-icon svg{width:21px;height:21px}
+ .office-service strong{font-size:11px}
+ .office-service small{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.route-link:after{animation:none}}
+</style>
 </head>
 <body>
 <header><div class="wrap"><nav><a class="logo" href="#home">F<b>.</b>A</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button><div class="links" id="siteLinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#services">Services</a><a href="#education">Education</a><a href="#contact">Contact ↗</a></div><span class="navnote small">PORTFOLIO / 2026</span></nav></div></header>
@@ -2766,40 +2836,39 @@ html body .topology .workflow p b{
 <article class="skill reveal"><div class="skillnum">02</div><div><h3>IT Skills</h3><p>Practical computer, office technology, security-system, and end-user technical support.</p><div class="tags"><span class="tag">PC Setup & Troubleshooting</span><span class="tag">Hardware Diagnosis</span><span class="tag">Windows Support</span><span class="tag">Printer Setup & Support</span><span class="tag">CCTV Systems</span><span class="tag">NVR / DVR</span><span class="tag">IP Phone Setup</span><span class="tag">Biometric / Fingerprint Devices</span><span class="tag">Office IT Infrastructure</span><span class="tag">Wi-Fi & Mesh Router Setup</span><span class="tag">End-user Technical Support</span></div></div></article>
 </div></div></section>
 
-<section class="section topology" id="topology"><div class="wrap">
-  <div class="sectionhead reveal"><span class="kicker">05 — ISP &amp; IT</span><h2>Networks that work.<br><em>Systems that connect.</em></h2></div>
-
-  <div class="infra-block reveal">
-    <div class="infra-heading"><span class="infra-index">01</span><div><span class="infra-eyebrow">ISP / ACCESS NETWORK</span><h3>Broadband delivery</h3></div><p>From upstream connectivity to the customer connection.</p></div>
-    <div class="isp-flow" aria-label="Internet to core router to switch to OLT to fiber splitter to ONU to customer router">
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c4 4 5 7 5 11s-1 7-5 11c-4-4-5-7-5-11s1-7 5-11Z"/></svg></span><strong>Internet</strong><small>Upstream</small></div>
-      <span class="isp-connector" aria-hidden="true"></span>
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="5" y="12" width="22" height="13" rx="3"/><path d="M10 12 8 5m14 7 2-7M10 18h2m4 0h2m4 0h1"/></svg></span><strong>Core router</strong><small>MikroTik</small></div>
-      <span class="isp-connector" aria-hidden="true"></span>
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="3" y="10" width="26" height="14" rx="3"/><path d="M8 15h2m4 0h2m4 0h2m4 0h1M8 20h2m4 0h2m4 0h2m4 0h1"/></svg></span><strong>Switch</strong><small>VLAN · L2/L3</small></div>
-      <span class="isp-connector" aria-hidden="true"></span>
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="7" y="3" width="18" height="26" rx="3"/><path d="M11 9h10v4H11zm0 8h10v3H11zm1 7h2m4 0h2"/></svg></span><strong>OLT</strong><small>GPON / EPON</small></div>
-      <span class="isp-connector" aria-hidden="true"></span>
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><path d="M4 16h8m0 0 9-9m-9 9 9 0m-9 0 9 9"/><circle cx="12" cy="16" r="2.5"/><path d="M21 7h7m-7 9h7m-7 9h7"/></svg></span><strong>Splitter</strong><small>Fiber distribution</small></div>
-      <span class="isp-connector" aria-hidden="true"></span>
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="4" y="11" width="24" height="14" rx="3"/><path d="M10 11V6m12 5V6M9 18h2m4 0h2m4 0h2"/></svg></span><strong>ONU / ONT</strong><small>Optical terminal</small></div>
-      <span class="isp-connector" aria-hidden="true"></span>
-      <div class="isp-step"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="4" y="15" width="24" height="11" rx="3"/><path d="M9 15 7 7m16 8 2-8M11 11a7 7 0 0 1 10 0"/></svg></span><strong>Wi-Fi router</strong><small>Customer access</small></div>
+<section class="section topology" id="topology">
+<div class="wrap">
+  <div class="sectionhead reveal"><span class="kicker">05 — NETWORK FLOW</span><h2>One connected<br><em>infrastructure.</em></h2></div>
+  <div class="network-visual reveal">
+    <div class="network-caption"><span>ISP ACCESS NETWORK</span><span>01 / BROADBAND DELIVERY</span></div>
+    <div class="network-route" aria-label="Internet, core router, switch, OLT, splitter, ONU and customer router">
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c4 4 5 7 5 11s-1 7-5 11c-4-4-5-7-5-11s1-7 5-11Z"/></svg></span><strong>Internet</strong><small>Upstream</small></div>
+      <span class="route-link"></span>
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><rect x="5" y="12" width="22" height="13" rx="3"/><path d="M10 12 8 5m14 7 2-7M10 18h2m4 0h2m4 0h1"/></svg></span><strong>Core router</strong><small>MikroTik</small></div>
+      <span class="route-link"></span>
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><rect x="3" y="10" width="26" height="14" rx="3"/><path d="M8 15h2m4 0h2m4 0h2m4 0h1M8 20h2m4 0h2m4 0h2m4 0h1"/></svg></span><strong>Switch</strong><small>VLAN · L2/L3</small></div>
+      <span class="route-link"></span>
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><rect x="7" y="3" width="18" height="26" rx="3"/><path d="M11 9h10v4H11zm0 8h10v3H11zm1 7h2m4 0h2"/></svg></span><strong>OLT</strong><small>GPON / EPON</small></div>
+      <span class="route-link"></span>
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><path d="M4 16h8m0 0 9-9m-9 9 9 0m-9 0 9 9"/><circle cx="12" cy="16" r="2.5"/><path d="M21 7h7m-7 9h7m-7 9h7"/></svg></span><strong>Splitter</strong><small>Fiber distribution</small></div>
+      <span class="route-link"></span>
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><rect x="4" y="11" width="24" height="14" rx="3"/><path d="M10 11V6m12 5V6M9 18h2m4 0h2m4 0h2"/></svg></span><strong>ONU / ONT</strong><small>Optical terminal</small></div>
+      <span class="route-link"></span>
+      <div class="route-node"><span class="route-icon"><svg viewBox="0 0 32 32"><rect x="4" y="15" width="24" height="11" rx="3"/><path d="M9 15 7 7m16 8 2-8M11 11a7 7 0 0 1 10 0"/></svg></span><strong>Customer</strong><small>Wi-Fi router</small></div>
     </div>
-    <div class="isp-outcomes"><span>Customer connection</span><b>Wi-Fi</b><b>PC / LAN</b><b>CCTV</b><b>IP phone</b></div>
-    <div class="infra-foot"><span>OPERATIONS</span><p>Configure <i>→</i> Monitor <i>→</i> Troubleshoot <i>→</i> Restore service</p></div>
+    <div class="network-endpoints"><span class="endpoint-label">CONNECTED SERVICES</span><span>Wi-Fi</span><span>PC / LAN</span><span>CCTV</span><span>IP phone</span></div>
+    <div class="network-process"><span>NETWORK OPERATIONS</span><p>Configure <i>→</i> Monitor <i>→</i> Troubleshoot <i>→</i> Restore</p></div>
   </div>
-
-  <div class="infra-block it-block reveal">
-    <div class="infra-heading"><span class="infra-index">02</span><div><span class="infra-eyebrow">IT / OFFICE INFRASTRUCTURE</span><h3>Everyday IT support</h3></div><p>Reliable devices, workplace connectivity and user support.</p></div>
-    <div class="it-capabilities">
-      <div class="it-capability"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="17" rx="2"/><path d="M12 27h8m-4-6v6M9 27h14"/></svg></span><div><strong>Computers &amp; hardware</strong><small>PC setup · Windows · fault diagnosis</small></div></div>
-      <div class="it-capability"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="7" y="3" width="18" height="12" rx="2"/><path d="M5 13h22v12H5zM10 25v4h12v-4m-10-7h8"/></svg></span><div><strong>Printers &amp; peripherals</strong><small>Installation · configuration · support</small></div></div>
-      <div class="it-capability"><span class="infra-icon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="18" rx="3"/><circle cx="16" cy="17" r="5"/><path d="M9 8l2-4h10l2 4"/></svg></span><div><strong>CCTV &amp; surveillance</strong><small>Camera · NVR / DVR · connectivity</small></div></div>
-      <div class="it-capability"><span class="infra-icon"><svg viewBox="0 0 32 32"><path d="M8 5h16a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z"/><path d="M10 10h12v8H10zm4 12h4m-2-4v4"/></svg></span><div><strong>IP telephony</strong><small>IP phone setup · extension support</small></div></div>
-      <div class="it-capability"><span class="infra-icon"><svg viewBox="0 0 32 32"><path d="M4 13a17 17 0 0 1 24 0M8 17a11 11 0 0 1 16 0m-12 4a5 5 0 0 1 8 0"/><circle cx="16" cy="25" r="1.5"/><path d="M5 5h22v22H5z" opacity=".25"/></svg></span><div><strong>Wi-Fi &amp; access devices</strong><small>Mesh routers · biometric devices</small></div></div>
+  <div class="office-visual reveal">
+    <div class="office-heading"><span class="office-index">02</span><div><span class="office-caption">IT / OFFICE INFRASTRUCTURE</span><h3>Technology behind the workplace.</h3></div><p>Device support, workplace connectivity and user assistance.</p></div>
+    <div class="office-services">
+      <div class="office-service"><span class="office-icon"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="17" rx="2"/><path d="M12 27h8m-4-6v6M9 27h14"/></svg></span><span><strong>Computers &amp; hardware</strong><small>PC setup · Windows · fault diagnosis</small></span></div>
+      <div class="office-service"><span class="office-icon"><svg viewBox="0 0 32 32"><rect x="7" y="3" width="18" height="12" rx="2"/><path d="M5 13h22v12H5zM10 25v4h12v-4m-10-7h8"/></svg></span><span><strong>Printers &amp; peripherals</strong><small>Installation · configuration · support</small></span></div>
+      <div class="office-service"><span class="office-icon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="18" rx="3"/><circle cx="16" cy="17" r="5"/><path d="M9 8l2-4h10l2 4"/></svg></span><span><strong>CCTV &amp; surveillance</strong><small>Camera · NVR / DVR · connectivity</small></span></div>
+      <div class="office-service"><span class="office-icon"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="4"/><path d="M10 10h12v8H10zm4 12h4m-2-4v4"/></svg></span><span><strong>IP telephony</strong><small>IP phone setup · extension support</small></span></div>
+      <div class="office-service"><span class="office-icon"><svg viewBox="0 0 32 32"><path d="M4 13a17 17 0 0 1 24 0M8 17a11 11 0 0 1 16 0m-12 4a5 5 0 0 1 8 0"/><circle cx="16" cy="25" r="1.5"/></svg></span><span><strong>Wi-Fi &amp; access devices</strong><small>Mesh routers · biometric devices</small></span></div>
     </div>
-    <div class="infra-foot"><span>USER SUPPORT</span><p>Install <i>→</i> Maintain <i>→</i> Resolve <i>→</i> Verify</p></div>
+    <div class="office-footer"><span>USER SUPPORT</span><p>Install <i>→</i> Maintain <i>→</i> Resolve <i>→</i> Verify</p></div>
   </div>
 </div></section>
 <section class="section services" id="services"><div class="wrap">
